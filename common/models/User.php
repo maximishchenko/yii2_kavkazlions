@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace common\models;
 
 use Yii;
@@ -23,33 +25,25 @@ use yii\web\IdentityInterface;
  * @property int $updated_at
  * @property string $password write-only password
  */
-class User extends ActiveRecord implements IdentityInterface
+abstract class User extends ActiveRecord implements IdentityInterface
 {
     public const STATUS_DELETED = 0;
     public const STATUS_INACTIVE = 9;
     public const STATUS_ACTIVE = 10;
-    /**
-     * {@inheritdoc}
-     */
-    public static function tableName()
+    
+    public static function tableName(): string
     {
         return '{{%user}}';
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
             TimestampBehavior::class,
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function rules()
+    public function rules(): array
     {
         return [
             ['status', 'default', 'value' => self::STATUS_INACTIVE],
@@ -57,17 +51,11 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function findIdentity($id)
     {
         return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function findIdentityByAccessToken($token, $type = null)
     {
         throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
@@ -133,25 +121,16 @@ class User extends ActiveRecord implements IdentityInterface
         return $timestamp + $expire >= time();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getId()
     {
         return $this->getPrimaryKey();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getAuthKey()
     {
         return $this->auth_key;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function validateAuthKey($authKey)
     {
         return $this->getAuthKey() === $authKey;
