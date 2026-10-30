@@ -7,4 +7,6 @@ return [
     'Password' => 'Пароль',
     'Remember Me' => 'Запомнить',
     'Do login' => 'Войти',
+    'Home' => 'Главная',
+    'Logout ({username})' => 'Выход ({username})',
 ];
