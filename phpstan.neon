@@ -3,7 +3,31 @@ includes:
 
 parameters:
     level: 5
+    phpVersion: 80400
     paths:
-        - models
+        # Common
+        - common/widgets
+        - common/models
+        - common/modules
+        - common/controllers
+        # Console
+        - console/controllers
+        - console/models
+        - console/components
+        # Backend
+        - backend/assets
+        - backend/models
+        - backend/modules
+        - backend/controllers
+        # Frotnend
+        - frontend/assets
+        - frontend/models
+        - frontend/modules
+        - frontend/controllers
+    excludePaths:
+        analyse:
+            - vendor
+    scanFiles:
+        - vendor/yiisoft/yii2/Yii.php
     yii2:
-        config_path: config/phpstan.php
+        config_path: common/config/phpstan.php

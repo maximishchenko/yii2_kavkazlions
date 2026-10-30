@@ -77,7 +77,7 @@ final class UsersController extends BaseController
                 if ($model->validate([$attribute])) {
                     return true;
                 } else {
-                    $error = implode(',', $model->getErrors($attribute));
+                    $error = implode(',', $model->getErrors()[$attribute] ?? []);
                     return false;
                 }
             },

@@ -44,10 +44,6 @@ class Alert extends \yii\bootstrap5\Widget
      */
     public $closeButton = [];
 
-
-    /**
-     * {@inheritdoc}
-     */
     public function run()
     {
         $session = Yii::$app->session;
