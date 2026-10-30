@@ -20,6 +20,8 @@ parameters:
         - backend/modules
         - backend/controllers
         # Frotnend
+        - frontend/components
+        - frontend/themes/v1/assets
         - frontend/assets
         - frontend/models
         - frontend/modules

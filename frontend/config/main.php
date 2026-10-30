@@ -18,7 +18,19 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    // 'on beforeRequest' => function () {
+    //     if (Yii::$app->configManager->getItemValue('isWebSiteOffline') == true) {
+    //         Yii::$app->catchAll = [
+    //           'site/offline', 
+    //           'name' => "Обслуживание",
+    //           'message' => "Производится обслуживание сайта"
+    //         ];
+    //     }
+    // },
     'components' => [
+        'themeManager' => [
+            'class' => 'frontend\components\ThemeManager',
+        ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
             'baseUrl' => '',
@@ -30,6 +42,27 @@ return [
         ],
         'session' => [
             'name' => 'advanced-frontend',
+        ],
+        // 'assetManager' => [
+            // 'bundles' => YII_ENV_PROD ? require(__DIR__.'/assets-prod.php') : [],
+            // 'linkAssets' => true,
+            // 'appendTimestamp' => true,
+            // 'hashCallback' => require __DIR__ . '/asset-hash.php',
+            // 'converter' => 'lucidtaz\yii2scssphp\ScssAssetConverter',
+        // ],
+        'view' => [
+            'theme' => [
+                'basePath' => '@frontend/themes/v1',
+                'baseUrl' => '@frontend/themes/v1',
+                'pathMap' => [
+                    '@frontend/views' => [
+                        '@frontend/themes/v1/views',
+                    ],
+                    '@frontend/modules' => [
+                        '@frontend/themes/v1/modules',
+                    ],
+                ],
+            ],
         ],
         'i18n' => [
             'translations' => [
