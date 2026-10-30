@@ -1,13 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace backend\assets;
 
-use yii\web\AssetBundle;
+use backend\assets\BaseAssetBundle;
 
-/**
- * Main backend application asset bundle.
- */
-class AppAsset extends AssetBundle
+final class AppAsset extends BaseAssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';

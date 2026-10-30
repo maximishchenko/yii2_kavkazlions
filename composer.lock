@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "601189b6d7f9697cb5f8849399562872",
+    "content-hash": "446c694d86c6f2e7c63cea07d2e1761c",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -2887,6 +2887,70 @@
             "time": "2020-09-18T13:47:07+00:00"
         },
         {
+            "name": "phpstan/phpstan",
+            "version": "2.3.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f20ce6f3c82556cfcfc086b152445a12d1d64fff",
+                "reference": "f20ce6f3c82556cfcfc086b152445a12d1d64fff",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ondřej Mirtes"
+                },
+                {
+                    "name": "Markus Staab"
+                },
+                {
+                    "name": "Vincent Langlet"
+                }
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
+            "support": {
+                "docs": "https://phpstan.org/user-guide/getting-started",
+                "forum": "https://github.com/phpstan/phpstan/discussions",
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "security": "https://github.com/phpstan/phpstan/security/policy",
+                "source": "https://github.com/phpstan/phpstan-src"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-10-28T22:38:53+00:00"
+        },
+        {
             "name": "phpunit/php-code-coverage",
             "version": "9.2.32",
             "source": {
@@ -5554,6 +5618,79 @@
                 }
             ],
             "time": "2025-11-17T20:03:58+00:00"
+        },
+        {
+            "name": "yii2-extensions/phpstan",
+            "version": "0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yii2-extensions/phpstan.git",
+                "reference": "29848e2ef6066bf4e9a777f3397d374c7fda6569"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yii2-extensions/phpstan/zipball/29848e2ef6066bf4e9a777f3397d374c7fda6569",
+                "reference": "29848e2ef6066bf4e9a777f3397d374c7fda6569",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "^4.1|^5.4",
+                "php": ">=8.3",
+                "phpstan/phpstan": "^2.3",
+                "yiisoft/yii2": "~2.0.55 || ^22.0@dev"
+            },
+            "require-dev": {
+                "maglnet/composer-require-checker": "^4.7",
+                "php-forge/coding-standard": "^0.3",
+                "phpstan/phpstan-deprecation-rules": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.1",
+                "phpstan/phpstan-strict-rules": "^2.1",
+                "phpunit/phpunit": "^10.5"
+            },
+            "type": "library",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                },
+                "scaffold": {
+                    "allowed-packages": [
+                        "php-forge/baseline",
+                        "php-forge/coding-standard"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-main": "0.6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii2\\extensions\\phpstan\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Wilmer Arambula",
+                    "email": "terabytesoftw@gmail.com",
+                    "homepage": "https://github.com/terabytesoftw",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHPStan extension for Yii2",
+            "keywords": [
+                "PHPStan",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/yii2-extensions/phpstan/issues",
+                "source": "https://github.com/yii2-extensions/phpstan/tree/0.5.0"
+            },
+            "time": "2026-10-15T23:09:09+00:00"
         },
         {
             "name": "yiisoft/yii2-debug",

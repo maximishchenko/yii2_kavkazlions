@@ -1,0 +1,9 @@
+includes:
+    - vendor/yii2-extensions/phpstan/extension.neon
+
+parameters:
+    level: 5
+    paths:
+        - models
+    yii2:
+        config_path: config/phpstan.php

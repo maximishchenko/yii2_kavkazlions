@@ -1,5 +1,8 @@
 <?php
 
+use yii\i18n\PhpMessageSource;
+use yii\log\FileTarget;
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
@@ -9,6 +12,9 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+    'language' => 'ru-RU',
+    'sourceLanguage' => 'en',
+    'homeUrl' => '',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
@@ -17,19 +23,28 @@ return [
             'csrfParam' => '_csrf-frontend',
             'baseUrl' => '',
         ],
-        // 'user' => [
-        //     'identityClass' => 'common\models\User',
-        //     'enableAutoLogin' => true,
-        //     'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
-        // ],
+        'user' => [
+            'identityClass' => 'frontend\models\User',
+            'enableAutoLogin' => true,
+            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+        ],
         'session' => [
             'name' => 'advanced-frontend',
         ],
+        'i18n' => [
+            'translations' => [
+                'app' => [
+                    'class' => PhpMessageSource::class,
+                    'basePath' => '@frontend/messages',
+                ],
+                'on missingTranslation' => ['common\components\TranslationEventHandler', 'handleMissingTranslation']
+            ],
+        ], 
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
                 [
-                    'class' => \yii\log\FileTarget::class,
+                    'class' => FileTarget::class,
                     'levels' => ['error', 'warning'],
                 ],
             ],
