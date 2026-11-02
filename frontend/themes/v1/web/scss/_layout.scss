@@ -1,0 +1,32 @@
+/* layout */
+main { padding: 32px 0 56px; }
+.layout { display: grid; grid-template-columns: 1fr 300px; gap: 32px; }
+.layout.full { grid-template-columns: 1fr; }
+.layout > .content { min-width: 0; }
+.breadcrumbs { font-size: .9rem; color: var(--muted); margin-bottom: 18px; }
+.breadcrumbs a { color: var(--muted); }
+.breadcrumbs a:hover { color: #fff; }
+.breadcrumbs span + span::before, .breadcrumbs a + span::before { content: "/"; margin: 0 8px; }
+.page-title { border-left: 6px solid var(--brand); padding-left: 14px; margin-bottom: 24px; }
+.prose p { margin: 0 0 1em; }
+.prose img { border-radius: var(--radius); margin: 1em 0; }
+.prose ul { padding-left: 1.3em; }
+.lead { font-size: 1.15rem; color: var(--muted); }
+
+/* sidebar */
+.sidebar .box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; margin-bottom: 20px; }
+.sidebar h3 { border-bottom: 2px solid var(--brand); padding-bottom: 6px; }
+.sidebar ul { list-style: none; margin: 0; padding: 0; }
+.sidebar li a { color: var(--text); display: block; padding: 6px 0; border-bottom: 1px dashed var(--line); text-decoration: none; }
+.sidebar li:last-child a { border: 0; }
+.sidebar li a:hover, .sidebar li a.active { color: var(--link); font-weight: 700; }
+
+/* footer */
+.footer { background: #000; color: #cfcfcf; padding: 36px 0 20px; border-top: 4px solid var(--brand); }
+.footer a { color: #fff; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 28px; }
+.footer h4 { color: var(--link); margin: 0 0 10px; }
+.footer ul { list-style: none; margin: 0; padding: 0; }
+.footer li { margin-bottom: 4px; }
+.slogan { font-size: 1.25rem; font-weight: 700; color: #fff; }
+.copy { margin-top: 24px; padding-top: 14px; border-top: 1px solid #ffffff22; font-size: .85rem; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }

@@ -2,31 +2,26 @@
 
 /** @var yii\web\View $this */
 /** @var yii\bootstrap5\ActiveForm $form */
-/** @var \backend\models\forms\LoginForm $model */
+/** @var \common\models\LoginForm $model */
 
+use yii\helpers\Html;
 use yii\bootstrap5\ActiveForm;
-use yii\bootstrap5\Html;
 
 $this->title = Yii::t('app', 'Login');
 ?>
 <div class="site-login">
-    <div class="mt-5 offset-lg-3 col-lg-6">
-        <h1><?= Html::encode($this->title) ?></h1>
 
-        <p>Please fill out the following fields to login:</p>
+    <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-        <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+        <?= $form->field($model, 'username', ['template' => '{input}{error}'])->textInput(['autofocus' => true, 'placeholder' => $model->getAttributeLabel('username')]) ?>
 
-            <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'password', ['template' => '{input}{error}'])->passwordInput(['placeholder' => $model->getAttributeLabel('password')]) ?>
 
-            <?= $form->field($model, 'password')->passwordInput() ?>
+        <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
-            <?= $form->field($model, 'rememberMe')->checkbox() ?>
+        <div class="form-group">
+            <?= Html::submitButton(Yii::t('app', 'Login'), ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
+        </div>
 
-            <div class="form-group">
-                <?= Html::submitButton(Yii::t('app', 'Do login'), ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
-            </div>
-
-        <?php ActiveForm::end(); ?>
-    </div>
+    <?php ActiveForm::end(); ?>
 </div>

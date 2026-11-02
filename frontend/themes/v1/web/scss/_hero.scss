@@ -1,0 +1,36 @@
+/* экран загрузки только главной страницы */
+.home-loading { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: var(--bg); opacity: 1; visibility: visible; transition: opacity .3s ease, visibility .3s ease; }
+.home-loading[hidden] { display: none; }
+.home-loading.is-hiding { opacity: 0; visibility: hidden; pointer-events: none; }
+.home-loading-indicator { position: relative; width: min(160px, 45vw, 45vh); aspect-ratio: 1; display: grid; place-items: center; background: radial-gradient(circle, #c8102e33 0%, transparent 68%); }
+.home-loading-ring { position: absolute; inset: 2%; border: 2px solid #ff4a5e33; border-top-color: var(--accent); border-radius: 50%; animation: home-loading-spin 2.4s linear infinite; }
+.home-loading-ring:nth-child(2) { inset: 13%; border-color: #ff4a5e22; border-bottom-color: var(--brand); animation: home-loading-spin 3.6s linear infinite reverse; }
+.home-loading-bars { width: 48%; height: 40%; display: flex; align-items: center; justify-content: center; gap: 8%; }
+.home-loading-bars span { width: 10%; height: 65%; border-radius: 999px; background: var(--accent); box-shadow: 0 0 12px #ff4a5e66; animation: home-loading-wave 1.2s ease-in-out infinite; }
+.home-loading-bars span:nth-child(2) { animation-delay: .12s; }
+.home-loading-bars span:nth-child(3) { animation-delay: .24s; }
+.home-loading-bars span:nth-child(4) { animation-delay: .36s; }
+.home-loading-bars span:nth-child(5) { animation-delay: .48s; }
+@keyframes home-loading-wave { 0%, 100% { opacity: .35; transform: scaleY(.45); } 50% { opacity: 1; transform: scaleY(1); } }
+@keyframes home-loading-spin { to { transform: rotate(360deg); } }
+
+/* hero / slider */
+.hero { background: var(--dark); color: #fff; }
+.slider { position: relative; overflow: hidden; aspect-ratio: 21/8; background: #000; min-width: 0; max-width: 100%; }
+.slider-track { display: flex; height: 100%; transition: transform 1s cubic-bezier(.4, 0, .2, 1); will-change: transform; }
+.slide { flex: 0 0 100%; height: 100%; position: relative; display: flex; align-items: flex-end; pointer-events: none; touch-action: pan-y; }
+.slide.is-active { pointer-events: auto; cursor: grab; }
+.slide img, .slide-caption { -webkit-user-drag: none; }
+.slider.is-dragging, .slider.is-dragging .slide { -webkit-user-select: none; user-select: none; }
+.slider.is-dragging .slide.is-active { cursor: grabbing; }
+.slide-img, .slide-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--focus, 50% 50%); }
+.slide-media { opacity: 0; pointer-events: none; }
+.slide-video.is-playing .slide-media { opacity: 1; }
+/* затемнение верха слайда: белый текст прозрачной шапки читается над светлым небом */
+.slide::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 11rem; background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)); pointer-events: none; }
+.slide-caption { position: relative; width: 100%; color: #fff; padding: 40px var(--gutter) 20px; background: linear-gradient(transparent, #000c); font-size: 1.3rem; font-weight: 600; }
+.slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: #0008; color: #fff; border: 0; width: 44px; height: 44px; border-radius: 50%; font-size: 1.4rem; cursor: pointer; z-index: 2; }
+.slider-btn.prev { left: 12px; } .slider-btn.next { right: 12px; }
+.slider-dots { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 2; }
+.slider-dots button { width: 10px; height: 10px; border-radius: 50%; border: 0; background: #fff6; cursor: pointer; padding: 0; }
+.slider-dots button.is-active { background: var(--brand); }

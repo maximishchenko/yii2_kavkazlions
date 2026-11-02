@@ -4,7 +4,7 @@ use yii\caching\FileCache;
 use yii\caching\DummyCache;
 
 return [
-    'name' => 'KavkazLions',
+    'name' => 'РОО ДЮСШЕ<br/>"Львы Кавказа"',
     'timezone'=> 'Europe/Moscow',
     'language' => 'ru-RU',
     'aliases' => [

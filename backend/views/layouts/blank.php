@@ -1,33 +1,40 @@
 <?php
 
-/** @var yii\web\View $this */
+/** @var \yii\web\View $this */
 /** @var string $content */
 
-use backend\assets\AppAsset;
-use yii\helpers\Html;
-
-AppAsset::register($this);
+\hail812\adminlte3\assets\AdminLteAsset::register($this);
+$this->registerCssFile('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700');
+$this->registerCssFile('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+\hail812\adminlte3\assets\PluginAsset::register($this)->add(['fontawesome', 'icheck-bootstrap']);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>" class="h-100">
+<html>
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?= $this->title; ?></title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="d-flex flex-column h-100">
-<?php $this->beginBody() ?>
-
-<main role="main">
-    <div class="container">
-        <?= $content ?>
+<body class="hold-transition login-page">
+<?php  $this->beginBody() ?>
+<div class="login-box">
+    <div class="login-logo">
+        <a href="<?=Yii::$app->homeUrl?>">
+            <?= Yii::$app->name; ?>
+        </a>
     </div>
-</main>
+    <!-- /.login-logo -->
+
+    <?= $content ?>
+</div>
+<!-- /.login-box -->
 
 <?php $this->endBody() ?>
 </body>
 </html>
-<?php $this->endPage();
+<?php $this->endPage() ?>
