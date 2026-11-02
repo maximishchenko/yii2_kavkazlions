@@ -43,13 +43,13 @@ return [
         'session' => [
             'name' => 'advanced-frontend',
         ],
-        // 'assetManager' => [
-            // 'bundles' => YII_ENV_PROD ? require(__DIR__.'/assets-prod.php') : [],
-            // 'linkAssets' => true,
-            // 'appendTimestamp' => true,
-            // 'hashCallback' => require __DIR__ . '/asset-hash.php',
-            // 'converter' => 'lucidtaz\yii2scssphp\ScssAssetConverter',
-        // ],
+        'assetManager' => [
+            'bundles' => YII_ENV_PROD ? require(__DIR__.'/assets-prod.php') : [],
+            'linkAssets' => true,
+            'appendTimestamp' => true,
+            'hashCallback' => require __DIR__ . '/asset-hash.php',
+            'converter' => 'lucidtaz\yii2scssphp\ScssAssetConverter',
+        ],
         'view' => [
             'theme' => [
                 'basePath' => '@frontend/themes/v1',

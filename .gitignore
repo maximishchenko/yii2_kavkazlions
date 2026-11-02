@@ -45,3 +45,6 @@ phpunit.phar
 /backend/web/index-test.php
 /backend/web/robots.txt
 .osp/
+.kimi-code/
+openspec/
+node_modules/
