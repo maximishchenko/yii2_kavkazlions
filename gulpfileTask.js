@@ -27,10 +27,10 @@ gulp.task('compress-css', function () {
 });
 
 // Use `svg-sprite` task for make sprite (stack mode: sprite.svg#<file name>)
-// Source: frontend/themes/v1/web/images/sprites/intermediate-svg/*.svg
-// Result: frontend/themes/v1/web/images/sprites/sprite.svg
+// Source: frontend/web/images/sprites/svg/*.svg
+// Result: frontend/web/images/sprites/sprite.svg
 // Run: gulp svg-sprite --gulpfile gulpfileTask.js
-var spritesDir = 'frontend/themes/v1/web/images/sprites';
+var spritesDir = 'frontend/web/images/sprites';
 
 gulp.task('svg-sprite', function () {
     return gulp.src(spritesDir + '/svg/*.svg')

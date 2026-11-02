@@ -18,26 +18,14 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="home">
+<body class="<?= Yii::$app->request->getPathInfo() === '' ? 'home' : '' ?>">
 <?php $this->beginBody() ?>
 
-<div class="home-loading" hidden aria-hidden="true">
-    <div class="home-loading-indicator">
-        <i class="home-loading-ring"></i>
-        <i class="home-loading-ring"></i>
-        <div class="home-loading-bars">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</div>
+<?= $this->render('includes/_loading') ?>
 
 <?= $this->render('includes/_header') ?>
 
-<main role="main" class="flex-shrink-0">
+<main id="content">
     <div class="container">
         <?= $this->render('includes/_breadcrumbs') ?>
         <?= $content ?>

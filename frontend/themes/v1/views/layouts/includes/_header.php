@@ -1,3 +1,7 @@
+<?php
+
+use yii\helpers\Url;
+?>
 <header class="header">
     <div class="container bar">
         <a class="brand" href="/">
@@ -7,7 +11,7 @@
             </span>
         </a>
         <button class="burger" type="button" aria-controls="nav" aria-expanded="false">
-            ☰ Меню
+            ☰ <?= Yii::t('app', 'Menu') ?>
         </button>
         <nav class="nav" id="nav" aria-label="Главное меню">
             <ul>
@@ -109,12 +113,12 @@
                         </li>
                     </ul>
                 </li> -->
-                <!-- <li>
-                    <a href="/kontakty/">
-                        Контакты
+                <li>
+                    <a href="<?= Url::toRoute('/contacts') ?>">
+                        <?= Yii::t('app', 'Contacts') ?>
                     </a>
                 </li>
-                <li class="has-sub">
+                <!-- <li class="has-sub">
                     <a href="/tovary-i-uslugi/">
                         Товары и услуги
                     </a>

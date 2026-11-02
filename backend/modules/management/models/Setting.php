@@ -12,6 +12,8 @@ class Setting extends \yii\base\Model
     const TAB_CONTACT = 'contact';
     const TAB_SERVICES = 'services';
     const TAB_GLOBAL = 'global';
+    const TAB_SOCIALS = 'socials';
+    const TAB_CONTACTS_DATA = 'contacts_data';
 
     public static function getTabsArray(): array
     {
@@ -19,6 +21,8 @@ class Setting extends \yii\base\Model
             self::TAB_CONTACT => Yii::t('app', 'SETTING_CONTACT_TAB'),
             self::TAB_SERVICES => Yii::t('app', 'SETTING_SERVICES_TAB'),
             self::TAB_GLOBAL => Yii::t('app', 'SETTING_TAB_GLOBAL'),
+            self::TAB_SOCIALS => Yii::t('app', 'TAB_SOCIALS'),
+            self::TAB_CONTACTS_DATA => Yii::t('app', 'SETTINGS_TAB_CONTACTS_DATA'),
         ];
     }
 
@@ -28,6 +32,8 @@ class Setting extends \yii\base\Model
             self::TAB_CONTACT,
             self::TAB_SERVICES,
             self::TAB_GLOBAL,
+            self::TAB_SOCIALS,
+            self::TAB_CONTACTS_DATA
         ];
     }
 
@@ -41,6 +47,8 @@ class Setting extends \yii\base\Model
             ],
             self::TAB_SERVICES => [
                 'mapApiKey',
+                'companyPositionLtd',
+                'companyPositionLng',
             ],
             self::TAB_GLOBAL => [
                 'companyName',
@@ -49,6 +57,14 @@ class Setting extends \yii\base\Model
                 'is_website_offline',
                 'startDate',
             ],
+            self::TAB_SOCIALS => [
+                'socialsVk',
+                'socialsMax',
+            ],
+            self::TAB_CONTACTS_DATA => [
+                'contactsParallaxTitle',
+                'contactsParallaxSubTitle',
+            ]
         ];
     }
 }

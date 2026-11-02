@@ -719,6 +719,56 @@ main {
 .home-parallax-kickboxing {
   background-image: url(/assets/img/parallax/bg-kickboxing.webp);
 }
+.home-parallax-contacts {
+  background-image: url(/images/static/parallax/bg-contacts.webp);
+}
+
+/* parallax section on contacts page */
+.contacts-parallax {
+  position: relative;
+  margin: 48px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-image: url(/images/static/parallax/bg-contacts.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .45);
+  border: 1px solid var(--line);
+}
+.contacts-parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11, 11, 11, .75) 0%, rgba(143, 11, 32, .5) 100%);
+  z-index: 1;
+}
+.contacts-parallax-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px var(--gutter);
+  max-width: 860px;
+}
+.contacts-parallax-title {
+  font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: 0 0 10px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .85);
+}
+.contacts-parallax-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 500;
+  color: #f0f0f0;
+  line-height: 1.5;
+  margin: 0;
+}
 .home-parallax-overlay {
   position: absolute;
   inset: 0;
@@ -1014,13 +1064,21 @@ table.data th {
   margin: 12px 0 0;
 }
 .socials a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 6px 14px;
   border-radius: 99px;
   background: #2a2a2a;
   color: #fff;
   text-decoration: none;
   font-size: 0.9rem;
+}
+.socials a .icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  fill: currentColor;
 }
 .socials a:hover {
   background: var(--brand);
@@ -1035,6 +1093,20 @@ table.data th {
   display: grid;
   place-items: center;
   color: var(--muted);
+  overflow: hidden;
+}
+.map-ph.is-loaded {
+  display: block;
+  border-style: solid;
+  border-color: var(--line);
+  background: none;
+}
+.map-ph img[src*="logo.webp"] {
+  border-radius: 50%;
+  background: #fff;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+  box-sizing: border-box;
 }
 /* article */
 .article-meta {
@@ -1164,12 +1236,12 @@ table.data th {
   }
 }
 @media (hover: hover) and (min-width: 901px) {
-  .home-parallax {
+  .home-parallax, .contacts-parallax {
     background-attachment: fixed;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .home-parallax {
+  .home-parallax, .contacts-parallax {
     background-attachment: scroll !important;
   }
 }

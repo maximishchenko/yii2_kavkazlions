@@ -2,7 +2,11 @@
     <div class="container">
         <div class="footer-grid">
             <div>
-                <?php if(Yii::$app->configManager->getItemValue('companySlogan')): ?>
+                <?php
+
+use yii\helpers\Url;
+
+ if(Yii::$app->configManager->getItemValue('companySlogan')): ?>
                 <div class="slogan">
                     <?= Yii::$app->configManager->getItemValue('companySlogan') ?>
                 </div>
@@ -15,7 +19,7 @@
             </div>
             <div>
                 <h4>
-                    Разделы
+                    <?= Yii::t('app', 'Website sections') ?>
                 </h4>
                 <ul>
                     <!-- <li>
@@ -43,6 +47,11 @@
                             Документация
                         </a>
                     </li> -->
+                    <li>
+                        <a href="<?= Url::toRoute('/contacts') ?>">
+                            <?= Yii::t('app', 'Contacts') ?>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div>

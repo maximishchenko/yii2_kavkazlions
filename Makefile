@@ -8,7 +8,7 @@ FILE ?= .
 
 help:
 	@echo Targets:
-	@echo   make sprite    		- build images/sprites/sprite.svg from images/sprites/intermediate-svg
+	@echo   make sprite    		- build frontend/web/images/sprites/sprite.svg from frontend/web/images/sprites/svg
 	@echo   make compress  		- minify JS/CSS and regenerate frontend/config/assets-prod.php
 	@echo   make build     		- sprite + compress
 	@echo   make typing			- run static type analize. Run make typing

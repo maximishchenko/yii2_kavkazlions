@@ -8,12 +8,12 @@
 }
 
 @media (hover: hover) and (min-width: 901px) {
-  .home-parallax {
+  .home-parallax, .contacts-parallax {
     background-attachment: fixed;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .home-parallax {
+  .home-parallax, .contacts-parallax {
     background-attachment: scroll !important;
   }
 }

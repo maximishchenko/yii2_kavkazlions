@@ -273,6 +273,40 @@
     go(0);
   }
 
+  // Яндекс.Карта на странице контактов
+  var mapEl = document.querySelector('.map-ph[data-maps-api-key]');
+  if (mapEl && mapEl.dataset.mapsApiKey) {
+    var mapScript = document.createElement('script');
+    mapScript.src = 'https://api-maps.yandex.ru/2.1/?apikey=' + encodeURIComponent(mapEl.dataset.mapsApiKey) + '&lang=ru_RU';
+    mapScript.onload = function () {
+      ymaps.ready(function () {
+        var coords = [parseFloat(mapEl.dataset.latitude), parseFloat(mapEl.dataset.longitude)];
+        if (coords.some(isNaN)) return;
+        mapEl.textContent = '';
+        mapEl.classList.add('is-loaded');
+        var map = new ymaps.Map(mapEl, {
+          center: coords,
+          zoom: 17,
+          controls: ['zoomControl', 'fullscreenControl']
+        });
+        map.behaviors.disable('scrollZoom');
+        var hint = [mapEl.dataset.hintName, mapEl.dataset.hintAddress, mapEl.dataset.hintPhone, mapEl.dataset.hintEmail]
+          .filter(Boolean)
+          .join('<br>');
+        map.geoObjects.add(new ymaps.Placemark(coords, {
+          hintContent: mapEl.dataset.hintName,
+          balloonContent: hint
+        }, {
+          iconLayout: 'default#image',
+          iconImageHref: '/images/static/logo.webp',
+          iconImageSize: [56, 56],
+          iconImageOffset: [-28, -56]
+        }));
+      });
+    };
+    document.head.appendChild(mapScript);
+  }
+
   // Преимущества на главной
   document.querySelectorAll('[data-benefits-slider]').forEach(function (benefits) {
     var track = benefits.querySelector('.benefits-track');

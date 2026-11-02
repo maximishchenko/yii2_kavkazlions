@@ -95,4 +95,67 @@ return [
             'type' => 'checkbox',
         ],
     ],
+    'socialsVk' => [
+        'path' => 'socialsVk',
+        'label' => Yii::t('app', "Socials VK"),
+        'description' => Yii::t('app', "Socials VK DESCRIPTION"),
+        'value' => "",
+        'rules' => [
+            ['url']
+        ],
+    ],
+    'socialsMax' => [
+        'path' => 'socialsMax',
+        'label' => Yii::t('app', "Socials Max"),
+        'description' => Yii::t('app', "Socials Max DESCRIPTION"),
+        'value' => "",
+        'rules' => [
+            ['url']
+        ],
+    ],
+    'companyPositionLtd' => [
+        'path' => 'companyPositionLtd',
+        'label' => Yii::t('app', "COMPANY_POSITION_LATITUDE"),
+        'description' => Yii::t('app', "COMPANY_POSITION_LATITUDE DESCRIPTION"),
+        'value' => "44.20764",
+        'rules' => [
+            ['required']
+        ],
+        'inputOptions' => [
+            'type' => 'float',
+        ],
+    ],
+    'companyPositionLng' => [
+        'path' => 'companyPositionLng',
+        'label' => Yii::t('app', "COMPANY_POSITION_LONGITUDE"),
+        'description' => Yii::t('app', "COMPANY_POSITION_LONGITUDE DESCRIPTION"),
+        'value' => "43.12826",
+        'rules' => [
+            ['required']
+        ],
+        'inputOptions' => [
+            'type' => 'float',
+        ],
+    ],
+    
+    'contactsParallaxTitle' => [
+        'path' => 'contactsParallaxTitle',
+        'label' => Yii::t('app', "CONTACTS_PARALLAX_TITLE"),
+        'description' => Yii::t('app', "CONTACTS_PARALLAX_TITLE_DESCRIPTION"),
+        'value' => "«Львы Кавказа» всегда на связи",
+        'rules' => [
+        ],
+    ],
+    
+    'contactsParallaxSubTitle' => [
+        'path' => 'contactsParallaxSubTitle',
+        'label' => Yii::t('app', "CONTACTS_PARALLAX_SUBTITLE"),
+        'description' => Yii::t('app', "CONTACTS_PARALLAX_SUBTITLE_DESCRIPTION"),
+        'value' => "Приходите на тренировку, звоните или пишите — ответим на все вопросы",
+        'rules' => [
+        ],
+        'inputOptions' => [
+            'type' => 'textarea',
+        ],
+    ],
 ];
