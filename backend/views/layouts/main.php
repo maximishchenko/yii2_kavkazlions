@@ -1,9 +1,12 @@
 <?php
 
-/* @var $this \yii\web\View */
-/* @var $content string */
+/** @var \yii\web\View $this */
+/** @var string $content */
 
 use yii\helpers\Html;
+use backend\assets\AppAsset;
+
+AppAsset::register($this);
 
 \hail812\adminlte3\assets\FontAwesomeAsset::register($this);
 \hail812\adminlte3\assets\AdminLteAsset::register($this);

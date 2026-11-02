@@ -9,5 +9,6 @@ return [
     'Do login' => 'Войти',
     'Home' => 'Главная',
     'Logout ({username})' => 'Выход ({username})',
-    'Starter Page' => 'Стартовая страница'
+    'Starter Page' => 'Стартовая страница',
+    'GO_LINK' => 'Перейти',
 ];

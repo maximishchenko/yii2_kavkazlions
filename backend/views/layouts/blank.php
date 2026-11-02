@@ -1,6 +1,9 @@
 <?php
 
 /** @var \yii\web\View $this */
+
+use yii\helpers\Html;
+
 /** @var string $content */
 
 \hail812\adminlte3\assets\AdminLteAsset::register($this);
@@ -25,7 +28,8 @@ $this->registerCssFile('https://code.ionicframework.com/ionicons/2.0.1/css/ionic
 <div class="login-box">
     <div class="login-logo">
         <a href="<?=Yii::$app->homeUrl?>">
-            <?= Yii::$app->name; ?>
+            <?= Html::img('/admin/static/images/lk_logo.webp', ['style' => 'position: relative; width: 100%;']); ?>
+            <?php // echo Yii::$app->name; ?>
         </a>
     </div>
     <!-- /.login-logo -->

@@ -1,6 +1,7 @@
 <?php
-/* @var $content string */
+/** @var string $content */
 
+use common\widgets\Alert;
 use yii\bootstrap4\Breadcrumbs;
 ?>
 <div class="content-wrapper">
@@ -36,7 +37,10 @@ use yii\bootstrap4\Breadcrumbs;
 
     <!-- Main content -->
     <div class="content">
-        <?= $content ?><!-- /.container-fluid -->
+        <div class="container">
+            <?= Alert::widget(); ?>
+            <?= $content ?><!-- /.container-fluid -->
+        </div>
     </div>
     <!-- /.content -->
 </div>

@@ -11,17 +11,16 @@ class AppAsset extends BaseAssetBundle
 {
     public $sourcePath = '@frontend/themes/v1/web';
     public $css = [
-        'css/site.css',
+        'scss/main.scss',
     ];
     public $js = [
+        'js/main.js',
     ];
     public $jsOptions = [
         'defer' => true,
         'position' => View::POS_END,
     ];
     public $depends = [
-        // 'frontend\themes\deffo_v1\assets\NpmAsset',
-        'yii\web\YiiAsset',
-        'yii\bootstrap5\BootstrapAsset',
+        'frontend\themes\v1\assets\FontPreloadAsset',
     ];
 }

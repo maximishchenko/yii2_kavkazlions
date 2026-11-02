@@ -1,9 +1,80 @@
-<?php
-use yii\bootstrap5\Html;
-?>
-<footer class="footer mt-auto py-3 text-muted">
+<footer class="footer">
     <div class="container">
-        <p class="float-start">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-        <p class="float-end"><?= Yii::powered() ?></p>
+        <div class="footer-grid">
+            <div>
+                <?php if(Yii::$app->configManager->getItemValue('companySlogan')): ?>
+                <div class="slogan">
+                    <?= Yii::$app->configManager->getItemValue('companySlogan') ?>
+                </div>
+                <?php endif; ?>
+                <?php if(Yii::$app->configManager->getItemValue('companyNameFull')): ?>
+                <p>
+                    <?= Yii::$app->configManager->getItemValue('companyNameFull') ?>
+                </p>
+                <?php endif; ?>
+            </div>
+            <div>
+                <h4>
+                    Разделы
+                </h4>
+                <ul>
+                    <!-- <li>
+                        <a href="/istoriya/">
+                            История
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/khronika/">
+                            Хроника событий
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/rukovodstvo/">
+                            Руководство
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/sponsory/">
+                            Спонсоры
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dokumentatsiya/">
+                            Документация
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+            <div>
+                <h4>
+                    <?= Yii::t('app', 'Contacts') ?>
+                </h4>
+                <ul>
+                    <?php if(Yii::$app->configManager->getItemValue('contactAddress')): ?>
+                    <li>
+                        <?= Yii::$app->configManager->getItemValue('contactAddress') ?>
+                    </li>
+                    <?php endif; ?>
+
+                    <?php if(Yii::$app->configManager->getItemValue('contactEmail')): ?>
+                    <li>
+                        <a href="mailto://<?= Yii::$app->configManager->getItemValue('contactEmail') ?>">
+                            <?= Yii::$app->configManager->getItemValue('contactEmail') ?>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
+                    <?php if(Yii::$app->configManager->getItemValue('contactPhone')): ?>
+                    <li>
+                        <a href="tel:<?= Yii::$app->configManager->getItemValue('contactPhone') ?>">
+                            <?= Yii::$app->configManager->getItemValue('contactPhone') ?>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+    </div>
+    <div class="copy">
+        <span>&copy; 2003–<?= date('Y') ?> <?= Yii::$app->configManager->getItemValue('companyName') ?></span>
     </div>
 </footer>

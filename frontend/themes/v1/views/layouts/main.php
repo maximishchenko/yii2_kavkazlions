@@ -18,8 +18,22 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="d-flex flex-column h-100">
+<body class="home">
 <?php $this->beginBody() ?>
+
+<div class="home-loading" hidden aria-hidden="true">
+    <div class="home-loading-indicator">
+        <i class="home-loading-ring"></i>
+        <i class="home-loading-ring"></i>
+        <div class="home-loading-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
 
 <?= $this->render('includes/_header') ?>
 

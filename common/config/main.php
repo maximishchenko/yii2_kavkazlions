@@ -2,6 +2,7 @@
 
 use yii\caching\FileCache;
 use yii\caching\DummyCache;
+use yii\helpers\ArrayHelper;
 
 return [
     'name' => 'РОО ДЮСШЕ<br/>"Львы Кавказа"',
@@ -13,6 +14,19 @@ return [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
+        'configManager' => [
+            'class' => 'yii2tech\config\Manager',
+            'autoRestoreValues' => true,
+            'cacheDuration' => 3600,
+            'storage' => [
+                'class' => 'yii2tech\config\StoragePhp',
+                'fileName' => "@frontend/runtime/app_config.php",
+            ],
+            'items' => ArrayHelper::merge(
+                require __DIR__ . '/_config_main.php',
+                []
+            ),
+        ],
         'formatter' => [
             'class' => 'yii\i18n\Formatter',
             'defaultTimeZone' => 'Europe/Moscow',

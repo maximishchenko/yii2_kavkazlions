@@ -2,6 +2,7 @@
 
 use yii\i18n\PhpMessageSource;
 use yii\log\FileTarget;
+use backend\modules\management\Module as ManagementModule;
 
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
@@ -18,7 +19,11 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'management' => [
+            'class' => ManagementModule::class,
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
