@@ -12,4 +12,5 @@ return [
     'Phone Word' => 'Тел.:',
     'Email Word' => 'Email:',
     'Map was here' => 'Здесь будет карта проезда',
+    'Management Title' => 'Руководство'
 ];

@@ -48,6 +48,11 @@ use yii\helpers\Url;
                         </a>
                     </li> -->
                     <li>
+                        <a href="<?= Url::toRoute('/management') ?>">
+                            <?= Yii::t('app', 'Management Title') ?>
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?= Url::toRoute('/contacts') ?>">
                             <?= Yii::t('app', 'Contacts') ?>
                         </a>
