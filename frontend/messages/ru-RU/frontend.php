@@ -12,5 +12,6 @@ return [
     'Phone Word' => 'Тел.:',
     'Email Word' => 'Email:',
     'Map was here' => 'Здесь будет карта проезда',
-    'Management Title' => 'Руководство'
+    'Management Title' => 'Руководство',
+    'Main Page Title' => 'РОО ДЮСШЕ "Львы Кавказа" | Главная',
 ];
