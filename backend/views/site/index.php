@@ -24,6 +24,30 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
                 </div>
             </div>
         </div>
+
+    </div>
+
+    <div class="accordion" id="contentAccordion">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="contentHeaderPrimary">
+                <button class="accordion-button" type="button" data-toggle="collapse" data-target="#contentCollapsePrimary" aria-expanded="true" aria-controls="contentCollapsePrimary">
+                    <strong>
+                        <h1><?= Yii::t('app', 'CONTENT_MODULE'); ?></h1>
+                    </strong>
+                </button>
+            </h2>
+            <div id="contentCollapsePrimary" class="accordion-collapse collapse show" aria-labelledby="contentHeaderPrimary" data-parent="#contentAccordion">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <?= $this->renderFile('@backend/modules/content/views/default/_items.php'); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
 
 </div>

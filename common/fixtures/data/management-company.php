@@ -1,0 +1,43 @@
+<?php
+
+return [
+    1 => [
+        'id' => 1,
+        'name' => 'Руководство "Львы Кавказа" СК',
+        'slug' => 'kavkazlions-management-company',
+        'comment' => null,
+        'image' => null,
+        'status' => 1,
+        'sort' => 1,
+        'created_at' => time(),
+        'updated_at' => time(),
+        'created_by' => 1,
+        'updated_by' => 1,
+    ],
+    2 => [
+        'id' => 2,
+        'name' => 'Руководство ФВКР',
+        'slug' => 'fvkr-management-company',
+        'comment' => null,
+        'image' => null,
+        'status' => 1,
+        'sort' => 2,
+        'created_at' => time(),
+        'updated_at' => time(),
+        'created_by' => 1,
+        'updated_by' => 1,
+    ],
+    3 => [
+        'id' => 3,
+        'name' => 'Руководство ФКР',
+        'slug' => 'fkr-management-company',
+        'comment' => null,
+        'image' => null,
+        'status' => 1,
+        'sort' => 3,
+        'created_at' => time(),
+        'updated_at' => time(),
+        'created_by' => 1,
+        'updated_by' => 1,
+    ],
+];

@@ -14,12 +14,16 @@ final class AppAsset extends BaseAssetBundle
         'css/site.css',
         'css/backend.css',
         'css/jquery-ui.css',
+        'css/sortable.css',
     ];
     public $js = [
         'js/jquery-ui.js',
+        'js/main.js',
+        'js/sortable.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',
+        'backend\assets\NpmAsset',
         'yii\web\YiiAsset',
         'yii\bootstrap5\BootstrapAsset',
     ];

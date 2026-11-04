@@ -39,6 +39,8 @@ use yii\helpers\Html;
             echo \hail812\adminlte\widgets\Menu::widget([
                 'items' => [
                     ['label' => Yii::t('app', 'MANAGEMENT_MODULE'), 'url' => ['/management/default/index'], 'iconStyle' => 'far', 'iconClassAdded' => 'text-danger', 'visible' => true,],
+                    ['label' => Yii::t('app', 'CONTENT_MODULE'), 'url' => ['/content/default/index'], 'iconStyle' => 'far', 'iconClassAdded' => 'text-success', 'visible' => true,],
+
                 ],
             ]);
             ?>

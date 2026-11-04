@@ -3,6 +3,7 @@
 use yii\i18n\PhpMessageSource;
 use yii\log\FileTarget;
 use backend\modules\management\Module as ManagementModule;
+use backend\modules\content\Module as ContentModule;
 
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
@@ -22,6 +23,9 @@ return [
     'modules' => [
         'management' => [
             'class' => ManagementModule::class,
+        ],
+        'content' => [
+            'class' => ContentModule::class,
         ],
     ],
     'components' => [

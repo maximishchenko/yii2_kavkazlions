@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ed84bdb10eab8be663eaf31723cc2c9",
+    "content-hash": "d1c86de0a5bc0c4d916a0240af032be7",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -592,6 +592,19 @@
             "type": "npm-asset",
             "license": [
                 "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/fancyapps--ui",
+            "version": "6.1.15",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@fancyapps/ui/-/ui-6.1.15.tgz",
+                "shasum": "68a0cb5ff336b61ce67f5e84435176e800ee545e"
+            },
+            "type": "npm-asset",
+            "license": [
+                "SEE LICENSE IN LICENSE.md"
             ]
         },
         {
