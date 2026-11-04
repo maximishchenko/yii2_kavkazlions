@@ -15,4 +15,8 @@ return [
     'Management Title' => 'Руководство',
     'Main Page Title' => 'РОО ДЮСШЕ "Львы Кавказа" | Главная',
     'Management Company Leaders Title {name}' => 'Руководство организации {name}',
+    'Proposal for sponsors' => 'Предложения для спонсоров',
+    'Our Partners' => 'Наши партнеры',
+    'Sponsors Title' => 'Наши партнеры',
+    'Sponsors Proposal Title' => 'Предложения для спонсоров',
 ];

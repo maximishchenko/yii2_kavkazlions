@@ -59,23 +59,23 @@ use yii\helpers\Url;
                         </li>
                     </ul>
                 </li> -->
-                <!-- <li class="has-sub">
+                <li class="has-sub">
                     <a href="/sponsory/">
                         Спонсоры
                     </a>
                     <ul>
                         <li>
-                            <a href="/sponsory/partnery/">
-                                Наши партнёры
+                            <a href="<?= Url::toRoute('/sponsors') ?>">
+                                <?= Yii::t('app', 'Our Partners') ?>
                             </a>
                         </li>
                         <li>
-                            <a href="/sponsory/predlozheniya/">
-                                Предложения для спонсоров
+                            <a href="<?= Url::toRoute('/sponsors/proposal/') ?>">
+                                <?= Yii::t('app', 'Proposal for sponsors') ?>
                             </a>
                         </li>
                     </ul>
-                </li> -->
+                </li>
                 <!-- <li class="has-sub">
                     <a href="/dokumentatsiya/">
                         Документация
