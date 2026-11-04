@@ -3,7 +3,7 @@
 return [
     1 => [
         'id' => 1,
-        'name' => 'Руководство "Львы Кавказа" СК',
+        'name' => '"Львы Кавказа" СК',
         'slug' => 'kavkazlions-management-company',
         'comment' => null,
         'image' => null,
@@ -16,7 +16,7 @@ return [
     ],
     2 => [
         'id' => 2,
-        'name' => 'Руководство ФВКР',
+        'name' => 'Федерация всестилевого каратэ России',
         'slug' => 'fvkr-management-company',
         'comment' => null,
         'image' => null,
@@ -29,7 +29,7 @@ return [
     ],
     3 => [
         'id' => 3,
-        'name' => 'Руководство ФКР',
+        'name' => 'Федерация Кикбоксинга России',
         'slug' => 'fkr-management-company',
         'comment' => null,
         'image' => null,

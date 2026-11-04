@@ -3,6 +3,7 @@
 
 /** @var yii\web\View $this */
 /** @var backend\modules\content\models\ManagementCompany $model */
+/** @var \yii\data\ActiveDataProvider $leadersDataProvider */
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'CONTENT_MODULE'), 'url' => ['/content']];
@@ -13,6 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('forms/_form', [
         'model' => $model,
+        'leadersDataProvider' => $leadersDataProvider,
     ]) ?>
 
 </div>

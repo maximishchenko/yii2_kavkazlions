@@ -8,6 +8,7 @@ use backend\modules\content\models\ManagementCompany;
 use backend\modules\content\models\search\ManagementCompanySearch;
 use backend\controllers\BaseCrudController;
 use Yii;
+use yii\data\ActiveDataProvider;
 use yii\web\Response;
 
 final class ManagementCompanyController extends BaseCrudController
@@ -48,6 +49,10 @@ final class ManagementCompanyController extends BaseCrudController
     public function actionUpdate(int $id): string | Response
     {
         $model = $this->findModel($id);
+        $leadersDataProvider = new ActiveDataProvider([
+            'query' => $model->getManagementLeaders(),
+            'pagination' => false,
+        ]);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('info', Yii::t('app', 'Record changed'));
@@ -56,14 +61,18 @@ final class ManagementCompanyController extends BaseCrudController
 
         return $this->render('primary/update', [
             'model' => $model,
+            'leadersDataProvider' => $leadersDataProvider,
         ]);
     }
 
     public function actionDelete(int $id): Response
     {
-        $this->findModel($id)->delete();
-        Yii::$app->session->setFlash('warning', Yii::t('app', 'Record deleted'));
-
+        $model = $this->findModel($id);
+        if($model->delete()){
+            Yii::$app->session->setFlash('warning', Yii::t('app', 'Record deleted'));
+        } else {
+            Yii::$app->session->setFlash('error', $model->getErrorSummary(true));
+        }
         return $this->redirect(['index']);
     }
     

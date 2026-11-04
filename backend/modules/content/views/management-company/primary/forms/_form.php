@@ -6,6 +6,8 @@ use backend\widgets\CollapsedAccordionWidget;
 /** @var yii\web\View $this */
 /** @var backend\modules\content\models\ManagementCompany $model */
 /** @var backend\widgets\BaseActiveForm $form */
+/** @var \yii\data\ActiveDataProvider $leadersDataProvider */
+
 ?>
 
 <div class="management-company-form">
@@ -56,6 +58,19 @@ use backend\widgets\CollapsedAccordionWidget;
             'headerId' => 'headerImage',
             'collapseId' => 'collapseImage',
     ]) ?>
+    <?php if($model->managementLeadersCount): ?>
+    <?= CollapsedAccordionWidget::widget([
+            'content' => $this->render('_form_leaders', [
+                'form' => $form,
+                'model' => $model,
+                'leadersDataProvider' => $leadersDataProvider,
+            ]),
+            'title' => Yii::t('app', 'Leaders block'),
+            'accordionId' => 'backendAccordionLeaders',
+            'headerId' => 'headerLeaders',
+            'collapseId' => 'collapseLeaders',
+    ]) ?>
+    <?php endif; ?>
     <?php if(!$model->isNewRecord): ?>
     <?= CollapsedAccordionWidget::widget([
             'content' => $this->render('_form_service', [

@@ -69,6 +69,7 @@ class ManagementCompany extends BaseSluggableCrudModel
             'name' => Yii::t('app', 'Management Company Name'),
             'image' => Yii::t('app', 'Management Company Image'),
             'imageFile' => Yii::t('app', 'Management Company Image'),
+            'managementLeadersCount' => Yii::t('app', 'Management Leaders Count'),
             'slug' => Yii::t('app', 'Slug'),
             'sort' => Yii::t('app', 'Sort'),
             'status' => Yii::t('app', 'Status'),
@@ -98,19 +99,46 @@ class ManagementCompany extends BaseSluggableCrudModel
         ];
     }
 
-    public function getCreatedByUser()
+    /**
+     * Связь с руководителями управляющей компании
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getManagementLeaders()
     {
-        return $this->hasOne(User::class, ['id' => 'created_by']);
+        return $this->hasMany(ManagementLeader::class, ['management_company_id' => 'id']);
     }
 
-    public function getUpdatedByUser()
+    /**
+     * Возвращает количество руководителей управляющей компании
+     *
+     * @return int
+     */
+    public function getManagementLeadersCount(): int
     {
-        return $this->hasOne(User::class, ['id' => 'updated_by']);
+        return (int)$this->getManagementLeaders()->count();
     }
 
     public static function find(): ManagementCompanyQuery|array|null
     {
         return new ManagementCompanyQuery(get_called_class());
+    }
+    
+
+    /**
+     * Проверка наличия связанных записей в модели ManagementLeaders
+     * Используется перед удалением организации.
+     * В случае наличия записей - возвращает ошибку
+     *
+     * @return bool
+     */
+    private function validateLeadersBeforeDelete(): bool
+    {
+        if (!empty($this->managementLeaders)) {
+            $this->addError('managementLeaders', Yii::t('app', 'Company has relation and cannot be deleted'));
+            return false;
+        }
+        return true;
     }
     
     public function beforeSave($insert): bool
@@ -136,6 +164,11 @@ class ManagementCompany extends BaseSluggableCrudModel
     
     public function beforeDelete(): bool
     {
+        /**
+         * Проверка наличия связанных записей
+         */
+        $this->validateLeadersBeforeDelete();
+
         if (parent::beforeDelete()) {
             if ($this->hasErrors()) {
                 return false;

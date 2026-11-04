@@ -7,7 +7,7 @@ use backend\widgets\SingleImagePreviewWidget;
 /** @var backend\widgets\BaseActiveForm $form */
 ?>
 <div class="col-md-12">
-<?= $form->field($model, 'imageFile', ['template' => '{label}<br/> {input} {error}'])->fileInput() ?>
+<?= $form->field($model, 'imageFile', ['template' => '{label}<br/> {input} {hint} {error}'])->fileInput() ?>
     <?php if(isset($model->image) && !empty($model->image)): ?>
         <div class="row">
             <?= SingleImagePreviewWidget::widget([

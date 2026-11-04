@@ -56,6 +56,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'cssCLasses' => Status::getValuesCssClasses(),
             ],
             [
+                'attribute' => 'managementLeadersCount',
+                'filter' => false,
+            ],
+            [
                 'class' => BaseCrudActionColumn::class,
             ],
         ],

@@ -28,4 +28,24 @@ abstract class BaseCrudModel extends ActiveRecord
             ],
         ];
     } 
+
+    /**
+     * Связь с моделью пользователей по полю created_at
+     *
+     * @return mixed
+     */
+    public function getCreatedByUser(): mixed
+    {
+        return $this->hasOne(User::class, ['id' => 'created_by']);
+    }
+
+    /**
+     * Связь с моделью пользователей по полю updated_at
+     *
+     * @return mixed
+     */
+    public function getUpdatedByUser(): mixed
+    {
+        return $this->hasOne(User::class, ['id' => 'updated_by']);
+    }
 }

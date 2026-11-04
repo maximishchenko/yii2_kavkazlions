@@ -10,11 +10,14 @@ use common\models\Sort;
 
 final class ManagementCompanySearch extends ManagementCompany
 {
+
+    public $managementLeadersCount;
+
     public function rules(): array
     {
         return [
             [['id', 'status', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['name', 'image', 'slug', 'sort', 'comment'], 'safe'],
+            [['name', 'image', 'slug', 'sort', 'comment', 'managementLeadersCount'], 'safe'],
         ];
     }
 
@@ -30,7 +33,6 @@ final class ManagementCompanySearch extends ManagementCompany
             'query' => $query,
             'sort'=> ['defaultOrder' => Sort::getBackendDefaultSort()],
         ]);
-
         $this->load($params, $formName);
 
         if (!$this->validate()) {
