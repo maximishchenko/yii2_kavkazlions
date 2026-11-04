@@ -4,34 +4,17 @@ declare(strict_types=1);
 
 namespace backend\modules\content\models;
 
-use backend\models\BaseSluggableCrudModel;
-use backend\models\User;
+use common\modules\content\models\ManagementCompany as CommonManagementCompany;
 use backend\modules\content\models\query\ManagementCompanyQuery;
 use backend\traits\FileTrait;
 use common\models\Sort;
 use common\models\Status;
 use Yii;
+use yii\helpers\ArrayHelper;
 
-/**
- * This is the model class for table "{{%management_company}}".
- *
- * @property int $id
- * @property string $name
- * @property string|null $image
- * @property string|null $slug
- * @property string|null $sort
- * @property int|null $status
- * @property string|null $comment
- * @property int|null $created_at
- * @property int|null $updated_at
- * @property int|null $created_by
- * @property int|null $updated_by
- */
-class ManagementCompany extends BaseSluggableCrudModel
+class ManagementCompany extends CommonManagementCompany
 {
     use FileTrait;
-
-    const UPLOAD_PATH = 'uploads/management-companies/';
 
     /**
      * Объект изображения логотипа для загрузки.
@@ -40,64 +23,40 @@ class ManagementCompany extends BaseSluggableCrudModel
      */
     public $imageFile = null;
 
-    public static function tableName(): string
-    {
-        return '{{%management_company}}';
-    }
-
     public function rules(): array
     {
-        return [
-            [['image', 'slug', 'sort', 'status', 'comment', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'default', 'value' => null],
-            [['name'], 'required'],
-            [['status', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['comment'], 'string'],
-            [['name', 'image', 'slug', 'sort'], 'string', 'max' => 255],
-
+        return ArrayHelper::merge(parent::rules(), [
             [['name'], 'unique'],
             ['status', 'in', 'range' => array_keys(Status::getStatusesArray())],
             [['sort'], 'default', 'value'=> Sort::DEFAULT_SORT_VALUE->value],
             [['status'], 'default', 'value'=> Status::STATUS_BLOCKED->value],
             [['imageFile'], 'image', 'skipOnEmpty' => true, 'extensions' => 'webp png jpg jpeg', 'maxSize' => 2 * 1024 * 1024],
-        ];
+        ]);
     }
 
     public function attributeLabels(): array
     {
-        return [
-            'id' => Yii::t('app', 'ID'),
+        return ArrayHelper::merge(parent::attributeLabels(), [
             'name' => Yii::t('app', 'Management Company Name'),
             'image' => Yii::t('app', 'Management Company Image'),
             'imageFile' => Yii::t('app', 'Management Company Image'),
             'managementLeadersCount' => Yii::t('app', 'Management Leaders Count'),
-            'slug' => Yii::t('app', 'Slug'),
-            'sort' => Yii::t('app', 'Sort'),
-            'status' => Yii::t('app', 'Status'),
-            'comment' => Yii::t('app', 'Comment'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'updated_at' => Yii::t('app', 'Updated At'),
-            'created_by' => Yii::t('app', 'Created By'),
-            'updated_by' => Yii::t('app', 'Updated By'),
-        ];
+        ]);
     }
 
     public function attributeHints(): array
     {
-        return [
-            'id' => Yii::t('app', 'ID Hint'),
+        return ArrayHelper::merge(parent::attributeHints(), [
             'name' => Yii::t('app', 'Management Company Name Hint'),
             'image' => Yii::t('app', 'Management Company Image Hint'),
             'imageFile' => Yii::t('app', 'Management Company Image Hint'),
-            'slug' => Yii::t('app', 'Slug Hint'),
-            'sort' => Yii::t('app', 'Sort Hint'),
-            'status' => Yii::t('app', 'Status Hint'),
-            'comment' => Yii::t('app', 'Comment Hint'),
-            'created_at' => Yii::t('app', 'Created At Hint'),
-            'updated_at' => Yii::t('app', 'Updated At Hint'),
-            'created_by' => Yii::t('app', 'Created By Hint'),
-            'updated_by' => Yii::t('app', 'Updated By Hint'),
-        ];
+        ]);
     }
+
+    public static function find(): ManagementCompanyQuery|array|null
+    {
+        return new ManagementCompanyQuery(get_called_class());
+    }   
 
     /**
      * Связь с руководителями управляющей компании
@@ -117,13 +76,7 @@ class ManagementCompany extends BaseSluggableCrudModel
     public function getManagementLeadersCount(): int
     {
         return (int)$this->getManagementLeaders()->count();
-    }
-
-    public static function find(): ManagementCompanyQuery|array|null
-    {
-        return new ManagementCompanyQuery(get_called_class());
-    }
-    
+    } 
 
     /**
      * Проверка наличия связанных записей в модели ManagementLeaders

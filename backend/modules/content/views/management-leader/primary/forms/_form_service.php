@@ -7,6 +7,9 @@ use yii\widgets\DetailView;
 /** @var backend\widgets\BaseActiveForm $form */
 ?>
 <div class="col-md-12">
+    <div class="alert alert-warning">
+        <?= Yii::t('app', 'MANAGEMENT_COMPANIES_SERVCIE_ADDITIONAL_HINT') ?>
+    </div>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [

@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace backend\models;
+namespace common\models;
 
+use common\modules\management\models\User;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;

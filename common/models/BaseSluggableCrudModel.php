@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace backend\models;
+namespace common\models;
 
-use backend\models\BaseCrudModel;
+use common\models\BaseCrudModel;
 use yii\behaviors\SluggableBehavior;
 
 abstract class BaseSluggableCrudModel extends BaseCrudModel

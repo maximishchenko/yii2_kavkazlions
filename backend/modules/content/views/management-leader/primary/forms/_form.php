@@ -11,6 +11,35 @@ use yii\widgets\ActiveForm;
 
 <div class="management-leader-form">
 
+    <div class="alert alert-warning">
+        <ul>
+            <li>
+                <?= Yii::t('app', 'MANAGEMENT_LEADERS_NAME_IS_REQUIRED') ?>
+            </li>
+            <li>
+                <?= Yii::t('app', 'MANAGEMENT_LEADERS_TITLE_IS_REQUIRED') ?>
+            </li>
+            <li>
+                <?= Yii::t('app', 'MANAGEMENT_LEADERS_COMPANY_IS_REQUIRED') ?>
+            </li>
+            <li>
+                <?= Yii::t('app', 'MANAGEMENT_LEADERS_DESCRIPTION_IS_OPTIONAL') ?>
+            </li>
+            <li>
+                <?= Yii::t('app', 'SORT_IS_OPTIONAL_WITH_DEFAULT_VALUE') ?>
+            </li>
+            <li>
+                <?= Yii::t('app', 'STATUS_IS_OPTIONAL_WITH_DEFAULT_VALUE') ?>
+            </li>
+            <li>
+                <?= Yii::t('app', 'COMMENT_IS_OPTIONAL_AND_SERVICE') ?>
+            </li>
+            <li>
+                <?= Yii::t('app', 'MANAGEMENT_IMAGE_REQUIREMENTS') ?>
+            </li>
+        </ul>
+    </div>
+
     <?php $form = BaseActiveForm::begin([
         'id' => 'management-leaders-form',
     ]); ?>
