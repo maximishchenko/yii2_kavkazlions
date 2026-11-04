@@ -14,4 +14,5 @@ return [
     'Map was here' => 'Здесь будет карта проезда',
     'Management Title' => 'Руководство',
     'Main Page Title' => 'РОО ДЮСШЕ "Львы Кавказа" | Главная',
+    'Management Company Leaders Title {name}' => 'Руководство организации {name}',
 ];

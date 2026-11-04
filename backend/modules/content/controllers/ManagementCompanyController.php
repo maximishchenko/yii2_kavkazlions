@@ -15,6 +15,7 @@ final class ManagementCompanyController extends BaseCrudController
 {
     const VERBS_ACTIONS = [
             'delete-image' => ['POST'],
+            'delete-background-image' => ['POST'],
         ];
 
     public function actionIndex(): string
@@ -87,6 +88,24 @@ final class ManagementCompanyController extends BaseCrudController
         /** @var ManagementCompany $model */
         $model = $this->findModel($id);
         $file = $model->getPath(ManagementCompany::UPLOAD_PATH, $model->image);
+        $model->removeSingleFileIfExist($file);
+        $model->image = null;
+        $model->save();
+        Yii::$app->session->setFlash('danger', Yii::t('app', 'Image file was removed'));
+        return $this->redirect(Yii::$app->request->referrer);
+    }
+    
+    /**
+     * Удаление единственного изображения
+     *
+     * @param int $id ID записи в которой удаляется изображение
+     * @return Response
+     */
+    public function actionDeleteBackgroundImage(int $id): Response
+    {
+        /** @var ManagementCompany $model */
+        $model = $this->findModel($id);
+        $file = $model->getPath(ManagementCompany::UPLOAD_PATH, $model->backgroundImage);
         $model->removeSingleFileIfExist($file);
         $model->image = null;
         $model->save();

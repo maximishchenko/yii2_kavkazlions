@@ -154,6 +154,25 @@
 .avatar { width: 120px; height: 120px; margin: 0 auto 12px; border-radius: 50%; background: linear-gradient(135deg, #3a2a24, var(--brand)); object-fit: cover; }
 .person .role { color: var(--link); font-weight: 600; font-size: .9rem; }
 
+/* management companies */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+.grid-3 .person { min-height: 340px; }
+.companies .avatar { width: 100%; height: auto; aspect-ratio: 4/3; margin-bottom: 12px; border-radius: var(--radius); background: none; object-fit: contain; }
+.companies div.avatar { background: linear-gradient(135deg, #3a2a24, var(--brand)); }
+.leaders .avatar { width: 180px; height: 180px; }
+
+/* leader profile */
+.leader-profile { display: grid; grid-template-columns: 300px 1fr; gap: 32px; align-items: start; }
+.leader-profile__photo { overflow: hidden; border-radius: var(--radius); }
+.leader-profile__photo img { width: 100%; border-radius: var(--radius); transition: transform .3s ease, filter .3s ease; }
+.leader-profile__photo a { display: block; cursor: zoom-in; }
+.leader-profile__photo a:hover img, .leader-profile__photo a:focus-visible img { transform: scale(1.05); filter: brightness(1.1); }
+.leader-profile__info .role { color: var(--link); font-weight: 600; font-size: 1.1rem; }
+.leader-profile__company a { color: var(--text); text-decoration: none; font-weight: 600; }
+.leader-profile__company a:hover { color: var(--link); }
+.person > a { display: block; color: #fff; text-decoration: none; }
+.person > a:hover { color: var(--link); }
+
 /* docs */
 .doc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .doc-list li { display: flex; gap: 14px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; }

@@ -23,6 +23,13 @@ class ManagementCompany extends CommonManagementCompany
      */
     public $imageFile = null;
 
+    /**
+     * Объект изображения логотипа для загрузки.
+     *
+     * @var mixed | null $backgroundImageFile
+     */
+    public $backgroundImageFile = null;
+
     public function rules(): array
     {
         return ArrayHelper::merge(parent::rules(), [
@@ -31,6 +38,7 @@ class ManagementCompany extends CommonManagementCompany
             [['sort'], 'default', 'value'=> Sort::DEFAULT_SORT_VALUE->value],
             [['status'], 'default', 'value'=> Status::STATUS_BLOCKED->value],
             [['imageFile'], 'image', 'skipOnEmpty' => true, 'extensions' => 'webp png jpg jpeg', 'maxSize' => 2 * 1024 * 1024],
+            [['backgroundImageFile'], 'image', 'skipOnEmpty' => true, 'extensions' => 'webp png jpg jpeg', 'maxSize' => 2 * 1024 * 1024],
         ]);
     }
 
@@ -40,6 +48,8 @@ class ManagementCompany extends CommonManagementCompany
             'name' => Yii::t('app', 'Management Company Name'),
             'image' => Yii::t('app', 'Management Company Image'),
             'imageFile' => Yii::t('app', 'Management Company Image'),
+            'backgroundImageFile' => Yii::t('app', 'Management Company Background Image'),
+            'description' => Yii::t('app', 'Management Company Description'),
             'managementLeadersCount' => Yii::t('app', 'Management Leaders Count'),
         ]);
     }
@@ -48,8 +58,10 @@ class ManagementCompany extends CommonManagementCompany
     {
         return ArrayHelper::merge(parent::attributeHints(), [
             'name' => Yii::t('app', 'Management Company Name Hint'),
+            'description' => Yii::t('app', 'Management Company Description Hint'),
             'image' => Yii::t('app', 'Management Company Image Hint'),
             'imageFile' => Yii::t('app', 'Management Company Image Hint'),
+            'backgroundImageFile' => Yii::t('app', 'Management Company Background Image Hint'),
         ]);
     }
 
@@ -103,6 +115,7 @@ class ManagementCompany extends CommonManagementCompany
 
                     if ($this->validate()) {
                         $this->uploadFile('imageFile', 'image', self::UPLOAD_PATH);
+                        $this->uploadFile('backgroundImageFile', 'backgroundImage', self::UPLOAD_PATH);
                     } else {
                         foreach ($this->getErrors() as $key => $value) {
                             Yii::debug($key.': '.$value[0]);
@@ -127,6 +140,7 @@ class ManagementCompany extends CommonManagementCompany
                 return false;
             } else {
                 $this->deleteSingleFile('image', self::UPLOAD_PATH);
+                $this->deleteSingleFile('backgroundImage', self::UPLOAD_PATH);
                 return true;
             }
         } else {

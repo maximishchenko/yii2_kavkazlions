@@ -39,6 +39,7 @@ abstract class ManagementCompany extends BaseSluggableCrudModel
             [['status', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
             [['comment'], 'string'],
             [['name', 'image', 'slug', 'sort'], 'string', 'max' => 255],
+            [['description'], 'safe'],
         ];
     }
 

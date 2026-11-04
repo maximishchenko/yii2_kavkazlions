@@ -35,4 +35,8 @@ return [
     'MANAGEMENT_LEADERS_TITLE_IS_REQUIRED' => 'Должность руководителя обязательна для заполнения',
     'MANAGEMENT_LEADERS_COMPANY_IS_REQUIRED' => 'Организация руководителя обязательна для заполнения',
     'MANAGEMENT_LEADERS_DESCRIPTION_IS_OPTIONAL' => 'Описание руководителя в разделе "Руководство" является необязательным для заполнения',
+    'Management Company Description' => 'Краткое описание',
+    'Management Company Description Hint' => 'Краткое описание. Отображается в разделе "Руководство"',
+    'Management Company Background Image' => 'Изображение фона карточки организации',
+    'Management Company Background Image Hint' => 'Используется в качестве изображения фона для описания организации в карточке организации',
 ];

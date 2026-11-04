@@ -4,9 +4,9 @@ main { padding: 32px 0 56px; }
 .layout.full { grid-template-columns: 1fr; }
 .layout > .content { min-width: 0; }
 .breadcrumbs { font-size: .9rem; color: var(--muted); margin-bottom: 18px; }
-.breadcrumbs a { color: var(--muted); }
+.breadcrumbs a { color: var(--muted); text-decoration: none; }
 .breadcrumbs a:hover { color: #fff; }
-.breadcrumbs span + span::before, .breadcrumbs a + span::before { content: "/"; margin: 0 8px; }
+.breadcrumbs span + span::before, .breadcrumbs a + span::before, .breadcrumbs a + a::before { content: "/"; margin: 0 8px; }
 .page-title { border-left: 6px solid var(--brand); padding-left: 14px; margin-bottom: 24px; }
 .prose p { margin: 0 0 1em; }
 .prose img { border-radius: var(--radius); margin: 1em 0; }

@@ -20,6 +20,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .home-loading, .home-loading-ring, .home-loading-bars span { transition: none; animation: none; }
+  .leader-profile__photo img { transition: none; }
   .slider-track { transition: none; }
   .benefits-track { transition: none; }
   .float-btns a { animation: none; }
@@ -28,6 +29,7 @@
 
 @media (max-width: 900px) {
   .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .benefits-track { --benefits-visible: 2; }
   .benefits-slide { flex-basis: calc((100% - 16px) / 2); }
   .layout { grid-template-columns: 1fr; }
@@ -60,4 +62,7 @@
   .header-contacts, .header-contacts a { font-size: .8rem; }
   .news-item { grid-template-columns: 1fr; }
   .doc-list li { flex-wrap: wrap; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .leader-profile { grid-template-columns: 1fr; }
+  .leader-profile__photo { max-width: 300px; margin: 0 auto; }
 }

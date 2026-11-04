@@ -48,7 +48,12 @@ return [
             'linkAssets' => true,
             'appendTimestamp' => true,
             'hashCallback' => require __DIR__ . '/asset-hash.php',
-            'converter' => 'lucidtaz\yii2scssphp\ScssAssetConverter',
+            'converter' => [
+                'class' => 'lucidtaz\yii2scssphp\ScssAssetConverter',
+                // В dev пересобираем SCSS при каждом запросе: конвертер следит
+                // только за mtime main.scss и не замечает изменений в partials (_*.scss)
+                'forceConvert' => YII_ENV_DEV,
+            ],
         ],
         'view' => [
             'theme' => [
@@ -89,7 +94,9 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '' => 'site/index', 
+                '' => 'site/index',
+                'management/<companySlug:[\w-]+>/<slug:[\w-]+>' => 'management/leader',
+                'management/<slug:[\w-]+>' => 'management/view',
             ],
         ],
     ],

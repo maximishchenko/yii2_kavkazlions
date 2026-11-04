@@ -11,11 +11,13 @@ final class m261102_201607_create_management_tables extends BaseMigration
         $this->createTable('{{%management_company}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
+            'backgroundImage' => $this->string(),
             'image' => $this->string(),
             'slug' => $this->string(),
             'sort' => $this->string(),
             'status' => $this->boolean(),
             'comment' => $this->text(),
+            'description' => $this->text(),
             'created_at' => $this->integer(),
             'updated_at' => $this->integer(),
             'created_by' => $this->integer(),
@@ -25,6 +27,7 @@ final class m261102_201607_create_management_tables extends BaseMigration
         $this->createIndex('idx-management_company-id', '{{%management_company}}', 'id');
         $this->createIndex('idx-management_company-name', '{{%management_company}}', 'name');
         $this->createIndex('idx-management_company-image', '{{%management_company}}', 'image');
+        $this->createIndex('idx-management_company-backgroundImage', '{{%management_company}}', 'backgroundImage');
         $this->createIndex('idx-management_company-slug', '{{%management_company}}', 'slug');
         $this->createIndex('idx-management_company-sort', '{{%management_company}}', 'sort');
         $this->createIndex('idx-management_company-status', '{{%management_company}}', 'status');

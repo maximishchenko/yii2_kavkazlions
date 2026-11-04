@@ -508,11 +508,12 @@ main {
 }
 .breadcrumbs a {
   color: var(--muted);
+  text-decoration: none;
 }
 .breadcrumbs a:hover {
   color: #fff;
 }
-.breadcrumbs span + span::before, .breadcrumbs a + span::before {
+.breadcrumbs span + span::before, .breadcrumbs a + span::before, .breadcrumbs a + a::before {
   content: "/";
   margin: 0 8px;
 }
@@ -722,7 +723,6 @@ main {
 .home-parallax-contacts {
   background-image: url(/images/static/parallax/bg-contacts.webp);
 }
-
 /* parallax section on contacts page */
 .contacts-parallax {
   position: relative;
@@ -737,13 +737,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, .45);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
   border: 1px solid var(--line);
 }
 .contacts-parallax-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(11, 11, 11, .75) 0%, rgba(143, 11, 32, .5) 100%);
+  background: linear-gradient(135deg, rgba(11, 11, 11, 0.75) 0%, rgba(143, 11, 32, 0.5) 100%);
   z-index: 1;
 }
 .contacts-parallax-content {
@@ -758,9 +758,9 @@ main {
   font-weight: 800;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   margin: 0 0 10px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, .85);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
 }
 .contacts-parallax-subtitle {
   font-size: clamp(1rem, 1.8vw, 1.25rem);
@@ -959,6 +959,77 @@ main {
   font-weight: 600;
   font-size: 0.9rem;
 }
+/* management companies */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+.grid-3 .person {
+  min-height: 340px;
+}
+.companies .avatar {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.3333333333;
+  margin-bottom: 12px;
+  border-radius: var(--radius);
+  background: none;
+  object-fit: contain;
+}
+.companies div.avatar {
+  background: linear-gradient(135deg, #3a2a24, var(--brand));
+}
+.leaders .avatar {
+  width: 180px;
+  height: 180px;
+}
+/* leader profile */
+.leader-profile {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.leader-profile__photo {
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.leader-profile__photo img {
+  width: 100%;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.leader-profile__photo a {
+  display: block;
+  cursor: zoom-in;
+}
+.leader-profile__photo a:hover img, .leader-profile__photo a:focus-visible img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+.leader-profile__info .role {
+  color: var(--link);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.leader-profile__company a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+.leader-profile__company a:hover {
+  color: var(--link);
+}
+.person > a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+.person > a:hover {
+  color: var(--link);
+}
 /* docs */
 .doc-list {
   list-style: none;
@@ -1105,7 +1176,7 @@ table.data th {
   border-radius: 50%;
   background: #fff;
   padding: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   box-sizing: border-box;
 }
 /* article */
@@ -1250,6 +1321,9 @@ table.data th {
     transition: none;
     animation: none;
   }
+  .leader-profile__photo img {
+    transition: none;
+  }
   .slider-track {
     transition: none;
   }
@@ -1266,6 +1340,9 @@ table.data th {
 @media (max-width: 900px) {
   /* текст подписи не заходит под плавающие кнопки */
   .cards-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .benefits-track {
@@ -1384,5 +1461,15 @@ table.data th {
   }
   .doc-list li {
     flex-wrap: wrap;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .leader-profile {
+    grid-template-columns: 1fr;
+  }
+  .leader-profile__photo {
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
