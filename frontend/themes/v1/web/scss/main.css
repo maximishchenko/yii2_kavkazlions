@@ -723,6 +723,9 @@ main {
 .home-parallax-contacts {
   background-image: url(/images/static/parallax/bg-contacts.webp);
 }
+.sponsors-parallax {
+  background-image: url(/images/static/parallax/bg-sponsors.webp);
+}
 /* parallax section on contacts page */
 .contacts-parallax {
   position: relative;
@@ -1307,12 +1310,12 @@ table.data th {
   }
 }
 @media (hover: hover) and (min-width: 901px) {
-  .home-parallax, .contacts-parallax {
+  .home-parallax, .contacts-parallax, .sponsors-parallax {
     background-attachment: fixed;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .home-parallax, .contacts-parallax {
+  .home-parallax, .contacts-parallax, .sponsors-parallax {
     background-attachment: scroll !important;
   }
 }

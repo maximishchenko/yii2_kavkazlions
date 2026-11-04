@@ -158,4 +158,16 @@ return [
             'type' => 'textarea',
         ],
     ],
+
+    'sponsorsProposal' => [
+        'path' => 'sponsorsProposal',
+        'label' => Yii::t('app', "Sponsors Proposal"),
+        'description' => Yii::t('app', "Sponsors Proposal DESCRIPTION"),
+        'value' => "<p>Станьте спонсором школы «Львы Кавказа» — поддержите развитие спорта и воспитание подрастающего поколения.</p>",
+        'rules' => [
+        ],
+        'inputOptions' => [
+            'type' => 'imperavi',
+        ],
+    ],
 ];

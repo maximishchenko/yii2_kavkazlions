@@ -14,6 +14,7 @@ class Setting extends \yii\base\Model
     const TAB_GLOBAL = 'global';
     const TAB_SOCIALS = 'socials';
     const TAB_CONTACTS_DATA = 'contacts_data';
+    const TAB_SPONSORS = 'sponsors';
 
     public static function getTabsArray(): array
     {
@@ -23,6 +24,7 @@ class Setting extends \yii\base\Model
             self::TAB_GLOBAL => Yii::t('app', 'SETTING_TAB_GLOBAL'),
             self::TAB_SOCIALS => Yii::t('app', 'TAB_SOCIALS'),
             self::TAB_CONTACTS_DATA => Yii::t('app', 'SETTINGS_TAB_CONTACTS_DATA'),
+            self::TAB_SPONSORS => Yii::t('app', 'Спонсорам'),
         ];
     }
 
@@ -33,7 +35,8 @@ class Setting extends \yii\base\Model
             self::TAB_SERVICES,
             self::TAB_GLOBAL,
             self::TAB_SOCIALS,
-            self::TAB_CONTACTS_DATA
+            self::TAB_CONTACTS_DATA,
+            self::TAB_SPONSORS,
         ];
     }
 
@@ -64,6 +67,9 @@ class Setting extends \yii\base\Model
             self::TAB_CONTACTS_DATA => [
                 'contactsParallaxTitle',
                 'contactsParallaxSubTitle',
+            ],
+            self::TAB_SPONSORS => [
+                'sponsorsProposal',
             ]
         ];
     }

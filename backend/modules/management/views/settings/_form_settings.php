@@ -11,12 +11,12 @@ use yii\helpers\ArrayHelper;
 ?>
 <?php foreach ($models as $key => $model): ?>
     <?php if (in_array($model->path, Setting::getTabsItems()[$tab])): ?>
-    
-        <div class="col-md-4">
+
+        <?php $inputType = ArrayHelper::remove($model->inputOptions, 'type'); ?>
+        <div class="<?= $inputType === 'imperavi' ? 'col-md-12' : 'col-md-4' ?>">
 
             <?php
             $field = $form->field($model, "[{$key}]value")->label(Yii::t('app', $model->label))->hint(Yii::t('app', $model->description));
-            $inputType = ArrayHelper::remove($model->inputOptions, 'type');
             switch($inputType) {
                 case 'phone':
                     $field->widget(\yii\widgets\MaskedInput::class, [
@@ -32,10 +32,22 @@ use yii\helpers\ArrayHelper;
                 case 'dropDown':
                     $field->dropDownList($model->inputOptions['items'])->label(Yii::t('app', $model->label))->hint(Yii::t('app', $model->description));
                     break;
+                case 'imperavi':
+                    $field->widget(\vova07\imperavi\Widget::class, [
+                        'settings' => [
+                            'lang' => 'ru',
+                            'minHeight' => 200,
+                            'plugins' => [
+                                'clips',
+                                'fullscreen',
+                            ],
+                        ],
+                    ])->label(Yii::t('app', $model->label))->hint(Yii::t('app', $model->description));
+                    break;
             }
             echo $field;
             ?>
-        
+
         </div>
 
     <?php endif; ?>

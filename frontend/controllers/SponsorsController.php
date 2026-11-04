@@ -5,17 +5,21 @@ declare(strict_types=1);
 namespace frontend\controllers;
 
 use frontend\controllers\BaseController;
+use Yii;
 
-
-class SponsorsController extends BaseController
+final class SponsorsController extends BaseController
 {
+
     public function actionIndex(): string
     {
-        return $this->render('index', []);
+        return $this->render('index');
     }
 
     public function actionProposal(): string
     {
-        return $this->render('proposal', []);
+        $sponsorsProposal = Yii::$app->configManager->getItemValue('sponsorsProposal');
+        return $this->render('proposal', [
+            'sponsorsProposal' => $sponsorsProposal
+        ]);
     }
 }

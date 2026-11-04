@@ -97,6 +97,7 @@ return [
                 '' => 'site/index',
                 'management/<companySlug:[\w-]+>/<slug:[\w-]+>' => 'management/leader',
                 'management/<slug:[\w-]+>' => 'management/view',
+                'sponsors' => 'sponsors/index',
             ],
         ],
     ],
