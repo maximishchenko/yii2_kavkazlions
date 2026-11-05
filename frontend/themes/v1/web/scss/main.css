@@ -1175,6 +1175,9 @@ table.data th {
   border-color: var(--line);
   background: none;
 }
+.map-ph [class*="ground-pane"] {
+  filter: grayscale(1);
+}
 .map-ph img[src*="logo.webp"] {
   border-radius: 50%;
   background: #fff;

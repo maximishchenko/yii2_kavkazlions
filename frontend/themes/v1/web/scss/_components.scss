@@ -202,6 +202,7 @@ table.data th { background: var(--brand); color: #fff; }
 .socials a:hover { background: var(--brand); color: #fff; }
 .map-ph { margin-top: 24px; aspect-ratio: 16/6; background: #ffffff12; border: 1px dashed var(--muted); border-radius: var(--radius); display: grid; place-items: center; color: var(--muted); overflow: hidden; }
 .map-ph.is-loaded { display: block; border-style: solid; border-color: var(--line); background: none; }
+.map-ph [class*="ground-pane"] { filter: grayscale(1); }
 .map-ph img[src*="logo.webp"] { border-radius: 50%; background: #fff; padding: 4px; box-shadow: 0 2px 8px rgba(0, 0, 0, .35); box-sizing: border-box; }
 
 /* article */

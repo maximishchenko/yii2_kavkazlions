@@ -160,4 +160,22 @@ return [
             'type' => 'number',
         ],
     ],
+    'contactsBottomParallaxTitleID' => [
+        'path' => 'contactsBottomParallaxTitleID',
+        'label' => Yii::t('app', "CONTACTS_PARALLAX_BOTOM_TITLE_ID"),
+        'description' => Yii::t('app', "MATERIAL_ID DESCRIPTION"),
+        'value' => "",
+        'inputOptions' => [
+            'type' => 'number',
+        ],
+    ],
+    'contactsBottomParallaxSubTitleID' => [
+        'path' => 'contactsBottomParallaxSubTitleID',
+        'label' => Yii::t('app', "CONTACTS_PARALLAX_BOTTOM_SUBTITLE_ID"),
+        'description' => Yii::t('app', "MATERIAL_ID DESCRIPTION"),
+        'value' => "",
+        'inputOptions' => [
+            'type' => 'number',
+        ],
+    ],
 ];

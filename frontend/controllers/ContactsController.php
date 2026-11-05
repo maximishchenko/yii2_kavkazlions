@@ -7,7 +7,6 @@ namespace frontend\controllers;
 use frontend\controllers\BaseController;
 use frontend\widgets\MaterialsBlock;
 use frontend\models\Contacts;
-// use yii\helpers\ArrayHelper;
 use Yii;
 
 final class ContactsController extends BaseController
@@ -16,18 +15,20 @@ final class ContactsController extends BaseController
     {
         $contactsParallaxTitleID = Yii::$app->configManager->getItemValue('contactsParallaxTitleID');
         $contactsParallaxSubTitleID =Yii::$app->configManager->getItemValue('contactsParallaxSubTitleID');
+        $contactsBottomParallaxTitleID = Yii::$app->configManager->getItemValue('contactsBottomParallaxTitleID');
+        $contactsBottomParallaxSubTitleID =Yii::$app->configManager->getItemValue('contactsBottomParallaxSubTitleID');
         $contactsParallaxTitle = MaterialsBlock::widget(['id' => $contactsParallaxTitleID]);
         $contactsParallaxSubTitle = MaterialsBlock::widget(['id' => $contactsParallaxSubTitleID]);
+        $contactsBottomParallaxTitle = MaterialsBlock::widget(['id' => $contactsBottomParallaxTitleID]);
+        $contactsBottomParallaxSubTitle = MaterialsBlock::widget(['id' => $contactsBottomParallaxSubTitleID]);
         $contacts = Contacts::find()->all();
-        // $phones = implode(', ', ArrayHelper::getColumn($contacts, 'phone'));
-        // $addresses = implode(', ', ArrayHelper::getColumn($contacts, 'address'));
 
         return $this->render('index', [
             'contactsParallaxTitle' => $contactsParallaxTitle,
             'contactsParallaxSubTitle' => $contactsParallaxSubTitle,
             'contacts' => $contacts,
-            // 'phones' => $phones,
-            // 'addresses' => $addresses,
+            'contactsBottomParallaxTitle' => $contactsBottomParallaxTitle,
+            'contactsBottomParallaxSubTitle' => $contactsBottomParallaxSubTitle,
         ]);
     }
 }

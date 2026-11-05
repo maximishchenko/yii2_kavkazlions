@@ -44,4 +44,6 @@ return [
     "CONTACTS_PARALLAX_SUBTITLE_ID" => 'Текст баннера на странице "Контакты"',
     'TEMPLATE_FOOTER_SLOGAN_ID' => 'Девиз, оторажаемый в подвале сайта',
     'TEMPLATE_COMPANY_FULL_NAME_ID' => 'Наименование, отображается в подвале сайта',
+    'CONTACTS_PARALLAX_BOTOM_TITLE_ID' => 'ID заголовка баннера под картой на странице контакты',
+    'CONTACTS_PARALLAX_BOTTOM_SUBTITLE_ID' => 'ID заголовка баннера под картой на странице контакты',
 ];

@@ -58,6 +58,8 @@ class Setting extends \yii\base\Model
                 'sponsorsProposalId',
                 'contactsParallaxTitleID',
                 'contactsParallaxSubTitleID',
+                'contactsBottomParallaxTitleID',
+                'contactsBottomParallaxSubTitleID',
                 'templateFooterSloganID',
                 'templateCompanyFullNameID',
             ],

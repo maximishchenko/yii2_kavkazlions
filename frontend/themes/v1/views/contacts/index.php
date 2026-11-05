@@ -129,6 +129,22 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="map-ph" data-maps-api-key="<?= Yii::$app->configManager->getItemValue('mapApiKey') ?>" data-points="<?= \yii\helpers\Html::encode(\yii\helpers\Json::encode($mapPoints)) ?>">
             <?= Yii::t('app', 'Map was here') ?>
         </div>
+
+        <section class="contacts-parallax">
+            <div class="contacts-parallax-overlay"></div>
+            <div class="contacts-parallax-content">
+                <?php if ($contactsBottomParallaxTitle): ?>
+                <h2 class="contacts-parallax-title">
+                    <?= $contactsBottomParallaxTitle ?>
+                </h2>
+                <?php endif; ?>
+                <?php if ($contactsBottomParallaxSubTitle): ?>
+                <p class="contacts-parallax-subtitle">
+                    <?= $contactsBottomParallaxSubTitle ?>
+                </p>
+                <?php endif; ?>
+            </div>
+        </section>
     </div>
 
 </div>
