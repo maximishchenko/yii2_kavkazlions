@@ -280,28 +280,33 @@
     mapScript.src = 'https://api-maps.yandex.ru/2.1/?apikey=' + encodeURIComponent(mapEl.dataset.mapsApiKey) + '&lang=ru_RU';
     mapScript.onload = function () {
       ymaps.ready(function () {
-        var coords = [parseFloat(mapEl.dataset.latitude), parseFloat(mapEl.dataset.longitude)];
-        if (coords.some(isNaN)) return;
+        var points = JSON.parse(mapEl.dataset.points || '[]');
+        if (!points.length) return;
         mapEl.textContent = '';
         mapEl.classList.add('is-loaded');
         var map = new ymaps.Map(mapEl, {
-          center: coords,
+          center: [points[0].latitude, points[0].longitude],
           zoom: 17,
           controls: ['zoomControl', 'fullscreenControl']
         });
         map.behaviors.disable('scrollZoom');
-        var hint = [mapEl.dataset.hintName, mapEl.dataset.hintAddress, mapEl.dataset.hintPhone, mapEl.dataset.hintEmail]
-          .filter(Boolean)
-          .join('<br>');
-        map.geoObjects.add(new ymaps.Placemark(coords, {
-          hintContent: mapEl.dataset.hintName,
-          balloonContent: hint
-        }, {
-          iconLayout: 'default#image',
-          iconImageHref: '/images/static/logo.webp',
-          iconImageSize: [56, 56],
-          iconImageOffset: [-28, -56]
-        }));
+        points.forEach(function (point) {
+          var hint = [point.name, point.address, point.phone, point.email]
+            .filter(Boolean)
+            .join('<br>');
+          map.geoObjects.add(new ymaps.Placemark([point.latitude, point.longitude], {
+            hintContent: point.name,
+            balloonContent: hint
+          }, {
+            iconLayout: 'default#image',
+            iconImageHref: '/images/static/logo.webp',
+            iconImageSize: [56, 56],
+            iconImageOffset: [-28, -56]
+          }));
+        });
+        if (points.length > 1) {
+          map.setBounds(map.geoObjects.getBounds(), {checkZoomRange: true});
+        }
       });
     };
     document.head.appendChild(mapScript);

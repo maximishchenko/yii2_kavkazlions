@@ -109,7 +109,24 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </section>
 
-        <div class="map-ph" data-longitude="<?= Yii::$app->configManager->getItemValue('companyPositionLng') ?>" data-latitude="<?= Yii::$app->configManager->getItemValue('companyPositionLtd') ?>" data-maps-api-key="<?= Yii::$app->configManager->getItemValue('mapApiKey') ?>" data-hint-name="<?= \yii\helpers\Html::encode(trim(preg_replace('/\s+/', ' ', strip_tags(Yii::$app->name)))) ?>" data-hint-address="<?= \yii\helpers\Html::encode(Yii::$app->configManager->getItemValue('contactAddress')) ?>" data-hint-phone="<?= \yii\helpers\Html::encode(Yii::$app->configManager->getItemValue('contactPhone')) ?>" data-hint-email="<?= \yii\helpers\Html::encode(Yii::$app->configManager->getItemValue('contactEmail')) ?>">
+        <?php
+        $mapPoints = [];
+        foreach ($contacts as $contact) {
+            if (!is_numeric($contact->latitude) || !is_numeric($contact->longitude)) {
+                continue;
+            }
+
+            $mapPoints[] = [
+                'latitude' => (float) $contact->latitude,
+                'longitude' => (float) $contact->longitude,
+                'name' => $contact->name,
+                'address' => $contact->address,
+                'phone' => $contact->phone,
+                'email' => $contact->email,
+            ];
+        }
+        ?>
+        <div class="map-ph" data-maps-api-key="<?= Yii::$app->configManager->getItemValue('mapApiKey') ?>" data-points="<?= \yii\helpers\Html::encode(\yii\helpers\Json::encode($mapPoints)) ?>">
             <?= Yii::t('app', 'Map was here') ?>
         </div>
     </div>
