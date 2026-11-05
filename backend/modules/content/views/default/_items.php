@@ -3,25 +3,58 @@
 use yii\helpers\Url;
 use hail812\adminlte\widgets\SmallBox;
 ?>
-<div class="row">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-        <?= SmallBox::widget([
-            'title' => Yii::t('app', 'MANAGEMENT_COMPANIES'),
-            'text' => Yii::t('app', 'MANAGEMENT_COMPANIES Edit'),
-            'icon' => 'fas fa-building',
-            'theme' => 'success',
-            'linkText' => Yii::t('app', 'GO_LINK'),
-            'linkUrl' => Url::to(['/content/management-company'])
-        ]) ?>
+
+    <div class="accordion" id="contentAccordion">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="contentHeaderPrimary">
+                <button class="accordion-button" type="button" data-toggle="collapse" data-target="#contentCollapsePrimary" aria-expanded="true" aria-controls="contentCollapsePrimary">
+                    <strong>
+                        <h1><?= Yii::t('app', 'CONTENT_MODULE'); ?></h1>
+                    </strong>
+                </button>
+            </h2>
+            <div id="contentCollapsePrimary" class="accordion-collapse collapse show" aria-labelledby="contentHeaderPrimary" data-parent="#contentAccordion">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <?= SmallBox::widget([
+                                        'title' => Yii::t('app', 'MATERIALS'),
+                                        'text' => Yii::t('app', 'MATERIALS Edit'),
+                                        'icon' => 'fas fa-pen',
+                                        'theme' => 'success',
+                                        'linkText' => Yii::t('app', 'GO_LINK'),
+                                        'linkUrl' => Url::to(['/content/materials'])
+                                    ]) ?>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <?= SmallBox::widget([
+                                        'title' => Yii::t('app', 'MANAGEMENT_COMPANIES'),
+                                        'text' => Yii::t('app', 'MANAGEMENT_COMPANIES Edit'),
+                                        'icon' => 'fas fa-building',
+                                        'theme' => 'success',
+                                        'linkText' => Yii::t('app', 'GO_LINK'),
+                                        'linkUrl' => Url::to(['/content/management-company'])
+                                    ]) ?>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <?= SmallBox::widget([
+                                        'title' => Yii::t('app', 'MANAGEMENT_LEADERS'),
+                                        'text' => Yii::t('app', 'MANAGEMENT_LEADERS Edit'),
+                                        'icon' => 'fas fa-users',
+                                        'theme' => 'success',
+                                        'linkText' => Yii::t('app', 'GO_LINK'),
+                                        'linkUrl' => Url::to(['/content/management-leader'])
+                                    ]) ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
-    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-        <?= SmallBox::widget([
-            'title' => Yii::t('app', 'MANAGEMENT_LEADERS'),
-            'text' => Yii::t('app', 'MANAGEMENT_LEADERS Edit'),
-            'icon' => 'fas fa-users',
-            'theme' => 'success',
-            'linkText' => Yii::t('app', 'GO_LINK'),
-            'linkUrl' => Url::to(['/content/management-leader'])
-        ]) ?>
-    </div>
-</div>

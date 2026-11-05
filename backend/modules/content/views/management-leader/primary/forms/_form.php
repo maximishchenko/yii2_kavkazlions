@@ -2,11 +2,10 @@
 
 use backend\widgets\BaseActiveForm;
 use backend\widgets\CollapsedAccordionWidget;
-use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
 /** @var backend\modules\content\models\ManagementLeader $model */
-/** @var yii\widgets\ActiveForm $form */
+/** @var BaseActiveForm $form */
 ?>
 
 <div class="management-leader-form">

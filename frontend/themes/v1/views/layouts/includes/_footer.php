@@ -1,21 +1,19 @@
+<?php
+use frontend\widgets\MaterialsBlock;
+use yii\helpers\Url;
+?>
+
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
             <div>
-                <?php
 
-use yii\helpers\Url;
-
- if(Yii::$app->configManager->getItemValue('companySlogan')): ?>
                 <div class="slogan">
-                    <?= Yii::$app->configManager->getItemValue('companySlogan') ?>
+                    <?= MaterialsBlock::widget(['id' => Yii::$app->configManager->getItemValue('templateFooterSloganID')]) ?>
                 </div>
-                <?php endif; ?>
-                <?php if(Yii::$app->configManager->getItemValue('companyNameFull')): ?>
                 <p>
-                    <?= Yii::$app->configManager->getItemValue('companyNameFull') ?>
+                    <?= MaterialsBlock::widget(['id' => Yii::$app->configManager->getItemValue('templateCompanyFullNameID')]) ?>
                 </p>
-                <?php endif; ?>
             </div>
             <div>
                 <h4>

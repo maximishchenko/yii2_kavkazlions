@@ -19,12 +19,7 @@ use yii\helpers\Html;
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <?= \cebe\gravatar\Gravatar::widget([
-                    'email' => Yii::$app->user->identity->email,
-                    'options' => [
-                    ],
-                    'size' => 32
-                ]) ?>
+                <i class="fa fa-user fa-2x"></i>
             </div>
             <div class="info">
                 <a href="#" class="d-block">

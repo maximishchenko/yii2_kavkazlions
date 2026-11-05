@@ -1,6 +1,8 @@
 <?php
 
 /** @var yii\web\View $this */
+/** @var string $contactsParallaxTitle */
+/** @var string $contactsParallaxSubTitle */
 
 $this->title = Yii::t('app', 'Contact Title');
 $this->params['breadcrumbs'][] = $this->title;
@@ -72,17 +74,17 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
 
-        <section class="contacts-parallax" aria-label="Всестилевое каратэ — путь воина">
+        <section class="contacts-parallax">
             <div class="contacts-parallax-overlay"></div>
             <div class="contacts-parallax-content">
-                <?php if (Yii::$app->configManager->getItemValue('contactsParallaxTitle')): ?>
+                <?php if ($contactsParallaxTitle): ?>
                 <h2 class="contacts-parallax-title">
-                    <?= Yii::$app->configManager->getItemValue('contactsParallaxTitle') ?>
+                    <?= $contactsParallaxTitle ?>
                 </h2>
                 <?php endif; ?>
-                <?php if (Yii::$app->configManager->getItemValue('contactsParallaxSubTitle')): ?>
+                <?php if ($contactsParallaxSubTitle): ?>
                 <p class="contacts-parallax-subtitle">
-                    <?= Yii::$app->configManager->getItemValue('contactsParallaxSubTitle') ?>
+                    <?= $contactsParallaxSubTitle ?>
                 </p>
                 <?php endif; ?>
             </div>

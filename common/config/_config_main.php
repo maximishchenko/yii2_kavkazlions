@@ -11,29 +11,6 @@ return [
             ['required']
         ],
     ],
-    'companyNameFull' => [
-        'path' => 'companyNameFull',
-        'label' => Yii::t('app', "COMPANY_NAME_FULL"),
-        'description' => Yii::t('app', "COMPANY_NAME_FULL_DESCRIPTION"),
-        'value' => "РОО «Детско-юношеская спортивная школа единоборств «Львы Кавказа» Ставропольского края",
-        'rules' => [
-            ['required'],
-        ],
-        'inputOptions' => [
-            'type' => 'textarea',
-        ],
-    ],
-    'companySlogan' => [
-        'path' => 'companySlogan',
-        'label' => Yii::t('app', "COMPANY_SLOGAN"),
-        'description' => Yii::t('app', "COMPANY_SLOGAN_DESCRIPTION"),
-        'value' => "Самооборона – школа выживания!",
-        'rules' => [
-        ],
-        'inputOptions' => [
-            'type' => 'textarea',
-        ],
-    ],
     'companyStartDate' => [
         'path' => 'startDate',
         'label' => Yii::t('app', "COMPANY_START_DATE"),
@@ -62,7 +39,7 @@ return [
         'path' => 'email',
         'label' => Yii::t('app', "CONTACT_EMAIL"),
         'description' => Yii::t('app', "CONTACT_EMAIL DESCRIPTION"),
-        'value' => "info@kavkazlions.ru",
+        'value' => "saburu_83@mail.ru",
         'rules' => [
             ['required'],
             ['email']
@@ -99,7 +76,7 @@ return [
         'path' => 'socialsVk',
         'label' => Yii::t('app', "Socials VK"),
         'description' => Yii::t('app', "Socials VK DESCRIPTION"),
-        'value' => "",
+        'value' => "https://vk.com/club75097076",
         'rules' => [
             ['url']
         ],
@@ -138,36 +115,49 @@ return [
         ],
     ],
     
-    'contactsParallaxTitle' => [
-        'path' => 'contactsParallaxTitle',
-        'label' => Yii::t('app', "CONTACTS_PARALLAX_TITLE"),
-        'description' => Yii::t('app', "CONTACTS_PARALLAX_TITLE_DESCRIPTION"),
-        'value' => "«Львы Кавказа» всегда на связи",
-        'rules' => [
+    'sponsorsProposalId' => [
+        'path' => 'sponsorsProposalId',
+        'label' => Yii::t('app', "SPONSORS_PROPOSAL_ID"),
+        'description' => Yii::t('app', "MATERIAL_ID DESCRIPTION"),
+        'value' => "",
+        'inputOptions' => [
+            'type' => 'number',
         ],
     ],
-    
-    'contactsParallaxSubTitle' => [
-        'path' => 'contactsParallaxSubTitle',
-        'label' => Yii::t('app', "CONTACTS_PARALLAX_SUBTITLE"),
-        'description' => Yii::t('app', "CONTACTS_PARALLAX_SUBTITLE_DESCRIPTION"),
-        'value' => "Приходите на тренировку, звоните или пишите — ответим на все вопросы",
-        'rules' => [
-        ],
+    'contactsParallaxTitleID' => [
+        'path' => 'contactsParallaxTitleID',
+        'label' => Yii::t('app', "CONTACTS_PARALLAX_TITLE_ID"),
+        'description' => Yii::t('app', "MATERIAL_ID DESCRIPTION"),
+        'value' => "",
         'inputOptions' => [
-            'type' => 'textarea',
+            'type' => 'number',
         ],
     ],
-
-    'sponsorsProposal' => [
-        'path' => 'sponsorsProposal',
-        'label' => Yii::t('app', "Sponsors Proposal"),
-        'description' => Yii::t('app', "Sponsors Proposal DESCRIPTION"),
-        'value' => "<p>Станьте спонсором школы «Львы Кавказа» — поддержите развитие спорта и воспитание подрастающего поколения.</p>",
-        'rules' => [
-        ],
+    'contactsParallaxSubTitleID' => [
+        'path' => 'contactsParallaxSubTitleID',
+        'label' => Yii::t('app', "CONTACTS_PARALLAX_SUBTITLE_ID"),
+        'description' => Yii::t('app', "MATERIAL_ID DESCRIPTION"),
+        'value' => "",
         'inputOptions' => [
-            'type' => 'imperavi',
+            'type' => 'number',
+        ],
+    ],
+    'templateFooterSloganID' => [
+        'path' => 'templateFooterSloganID',
+        'label' => Yii::t('app', "TEMPLATE_FOOTER_SLOGAN_ID"),
+        'description' => Yii::t('app', "MATERIAL_ID DESCRIPTION"),
+        'value' => "",
+        'inputOptions' => [
+            'type' => 'number',
+        ],
+    ],
+    'templateCompanyFullNameID' => [
+        'path' => 'templateCompanyFullNameID',
+        'label' => Yii::t('app', "TEMPLATE_COMPANY_FULL_NAME_ID"),
+        'description' => Yii::t('app', "MATERIAL_ID DESCRIPTION"),
+        'value' => "",
+        'inputOptions' => [
+            'type' => 'number',
         ],
     ],
 ];
