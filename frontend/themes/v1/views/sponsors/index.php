@@ -1,5 +1,8 @@
 <?php
 
+use yii\helpers\Html;
+use yii\widgets\ListView;
+
 $this->title = Yii::t('app', 'Sponsors Title');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,6 +18,17 @@ $this->params['breadcrumbs'][] = $this->title;
         </h2>
     </div>
 </section>
+
+<?= ListView::widget([
+    'dataProvider' => $dataProvider,
+    'options' => ['class' => 'sponsors-list'],
+    'itemOptions' => ['class' => 'sponsor-card'],
+    'itemView' => static function ($model) {
+        return Html::tag('h2', Html::encode($model->name), ['class' => 'sponsor-card-name']);
+    },
+    'layout' => "{items}\n{pager}",
+    'emptyText' => '',
+]) ?>
 
 <section class="home-parallax sponsors-parallax" aria-label="<?= Yii::t('app', 'Sponsors Index Parallax Bottom Title') ?>">
     <div class="home-parallax-overlay"></div>

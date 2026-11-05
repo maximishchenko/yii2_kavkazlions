@@ -5,6 +5,7 @@ use backend\widgets\LinkColumn;
 use backend\widgets\ListButtonsWidget;
 use backend\widgets\SetColumn;
 use common\models\Status;
+use yii\bootstrap5\LinkPager;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
 
@@ -29,6 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'pager' => [
+            'class' => LinkPager::class
+        ],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 

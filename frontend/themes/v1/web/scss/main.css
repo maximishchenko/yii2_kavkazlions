@@ -1117,6 +1117,43 @@ table.data th {
   font-weight: 700;
   color: var(--muted);
 }
+.sponsors-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+.sponsor-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(67, 67, 66, 0.5);
+  backdrop-filter: blur(40px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.sponsor-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #434342;
+  border-radius: 0 400px 400px 0;
+  transition: all 0.5s linear;
+}
+.sponsor-card:hover::before {
+  width: 100%;
+  border-radius: 0;
+}
+.sponsor-card-name {
+  position: relative;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
 /* contacts */
 .contact-grid {
   display: grid;

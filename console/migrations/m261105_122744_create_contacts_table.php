@@ -25,7 +25,8 @@ final class m261105_122744_create_contacts_table extends BaseMigration
             'updated_at' => $this->integer(),
             'created_by' => $this->integer(),
             'updated_by' => $this->integer(),
-        ]);
+        ], $this->getTableOptions());
+        
         $this->createIndex('idx-contacts-id', '{{%contacts}}', 'id');
         $this->createIndex('idx-contacts-name', '{{%contacts}}', 'name');
         $this->createIndex('idx-contacts-slug', '{{%contacts}}', 'slug');
