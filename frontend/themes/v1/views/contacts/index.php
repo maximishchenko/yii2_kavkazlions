@@ -1,8 +1,12 @@
 <?php
 
 /** @var yii\web\View $this */
+
+use frontend\models\Contacts;
+
 /** @var string $contactsParallaxTitle */
 /** @var string $contactsParallaxSubTitle */
+/** @var Contacts | array $contacts */
 
 $this->title = Yii::t('app', 'Contact Title');
 $this->params['breadcrumbs'][] = $this->title;
@@ -15,13 +19,15 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="layout full">
     <div class="content">
         <div class="contact-grid">
-            <?php if(Yii::$app->configManager->getItemValue('contactAddress')): ?>
+            <?php if ($contacts): ?>
             <div class="contact-card">
                 <h3>
                     <?= Yii::t('app', 'Addresses') ?>
                 </h3>
                 <p>
-                    <?= Yii::$app->configManager->getItemValue('contactAddress') ?>
+                    <?= implode(', ', array_map(static function ($address) {
+                        return \yii\helpers\Html::encode(trim($address));
+                    }, \yii\helpers\ArrayHelper::getColumn($contacts, 'address'))) ?>
                 </p>
             </div>
             <?php endif; ?>
@@ -29,18 +35,31 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h3>
                     <?= Yii::t('app', 'Contacts Block') ?>
                 </h3>
-                <?php if(Yii::$app->configManager->getItemValue('contactPhone')): ?>
+                <?php if ($contacts): ?>
                 <p>
-                    <?= Yii::t('app', 'Phone Word') ?> <a href="tel:<?= Yii::$app->configManager->getItemValue('contactPhone') ?>">
-                        <?= Yii::$app->configManager->getItemValue('contactPhone') ?>
-                    </a>
+                    <?= Yii::t('app', 'Phone Word') ?>
+                    <?= implode(', ', array_map(static function ($phone) {
+                        $phone = trim($phone);
+                        $phoneLink = preg_replace('/[^\d+]/', '', $phone);
+
+                        return \yii\helpers\Html::a(
+                            \yii\helpers\Html::encode($phone),
+                            'tel:' . $phoneLink
+                        );
+                    }, array_unique(\yii\helpers\ArrayHelper::getColumn($contacts, 'phone')))) ?>
                 </p>
                 <?php endif; ?>
-                <?php if(Yii::$app->configManager->getItemValue('contactEmail')): ?>
+                <?php if ($contacts): ?>
                 <p>
-                    <?= Yii::t('app', 'Email Word') ?> <a href="mailto:<?= Yii::$app->configManager->getItemValue('contactEmail') ?>">
-                        <?= Yii::$app->configManager->getItemValue('contactEmail') ?>
-                    </a>
+                    <?= Yii::t('app', 'Email Word') ?>
+                    <?= implode(', ', array_map(static function ($email) {
+                        $email = trim($email);
+
+                        return \yii\helpers\Html::a(
+                            \yii\helpers\Html::encode($email),
+                            'mailto:' . $email
+                        );
+                    }, array_unique(\yii\helpers\ArrayHelper::getColumn($contacts, 'email')))) ?>
                 </p>
                 <?php endif; ?>
             </div>

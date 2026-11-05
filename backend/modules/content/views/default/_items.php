@@ -50,6 +50,16 @@ use hail812\adminlte\widgets\SmallBox;
                                         'linkUrl' => Url::to(['/content/management-leader'])
                                     ]) ?>
                                 </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <?= SmallBox::widget([
+                                        'title' => Yii::t('app', 'CONTACTS'),
+                                        'text' => Yii::t('app', 'CONTACTS Edit'),
+                                        'icon' => 'fas fa-map',
+                                        'theme' => 'success',
+                                        'linkText' => Yii::t('app', 'GO_LINK'),
+                                        'linkUrl' => Url::to(['/content/contacts'])
+                                    ]) ?>
+                                </div>
                             </div>
                         </div>
                     </div>

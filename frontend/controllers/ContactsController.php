@@ -6,6 +6,8 @@ namespace frontend\controllers;
 
 use frontend\controllers\BaseController;
 use frontend\widgets\MaterialsBlock;
+use frontend\models\Contacts;
+// use yii\helpers\ArrayHelper;
 use Yii;
 
 final class ContactsController extends BaseController
@@ -16,9 +18,16 @@ final class ContactsController extends BaseController
         $contactsParallaxSubTitleID =Yii::$app->configManager->getItemValue('contactsParallaxSubTitleID');
         $contactsParallaxTitle = MaterialsBlock::widget(['id' => $contactsParallaxTitleID]);
         $contactsParallaxSubTitle = MaterialsBlock::widget(['id' => $contactsParallaxSubTitleID]);
+        $contacts = Contacts::find()->all();
+        // $phones = implode(', ', ArrayHelper::getColumn($contacts, 'phone'));
+        // $addresses = implode(', ', ArrayHelper::getColumn($contacts, 'address'));
+
         return $this->render('index', [
             'contactsParallaxTitle' => $contactsParallaxTitle,
-            'contactsParallaxSubTitle' => $contactsParallaxSubTitle
+            'contactsParallaxSubTitle' => $contactsParallaxSubTitle,
+            'contacts' => $contacts,
+            // 'phones' => $phones,
+            // 'addresses' => $addresses,
         ]);
     }
 }
