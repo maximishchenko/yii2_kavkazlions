@@ -19,9 +19,12 @@ final class SponsorsController extends BaseController
     public function actionProposal(): string
     {
         $materialID = Yii::$app->configManager->getItemValue('sponsorsProposalId');
+        $materialBottomID = Yii::$app->configManager->getItemValue('sponsorsProposalBottomId');
         $sponsorsProposal = MaterialsBlock::widget(['id' => $materialID]);
+        $sponsorsBottomProposal = MaterialsBlock::widget(['id' => $materialBottomID]);
         return $this->render('proposal', [
-            'sponsorsProposal' => $sponsorsProposal
+            'sponsorsProposal' => $sponsorsProposal,
+            'sponsorsBottomProposal' => $sponsorsBottomProposal,
         ]);
     }
 }

@@ -178,4 +178,13 @@ return [
             'type' => 'number',
         ],
     ],
+    'sponsorsProposalBottomId' => [
+        'path' => 'sponsorsProposalBottomId',
+        'label' => Yii::t('app', "SPONSORS_PROPOSAL_BOTTOM_ID"),
+        'description' => Yii::t('app', "MATERIAL_ID DESCRIPTION"),
+        'value' => "",
+        'inputOptions' => [
+            'type' => 'number',
+        ],
+    ],
 ];

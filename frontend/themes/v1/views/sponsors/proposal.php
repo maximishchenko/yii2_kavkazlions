@@ -24,3 +24,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= $sponsorsProposal ?>
     </div>
 <?php endif; ?>
+
+<section class="home-parallax sponsors-parallax" aria-label="<?= $this->title ?>">
+    <div class="home-parallax-overlay"></div>
+    <div class="home-parallax-content">
+        <h2 class="home-parallax-title">
+            <?= $sponsorsBottomProposal ?>
+        </h2>
+    </div>
+</section>

@@ -46,4 +46,5 @@ return [
     'TEMPLATE_COMPANY_FULL_NAME_ID' => 'Наименование, отображается в подвале сайта',
     'CONTACTS_PARALLAX_BOTOM_TITLE_ID' => 'ID заголовка баннера под картой на странице контакты',
     'CONTACTS_PARALLAX_BOTTOM_SUBTITLE_ID' => 'ID заголовка баннера под картой на странице контакты',
+    'SPONSORS_PROPOSAL_BOTTOM_ID' => 'ID заголовка баннера под предложениями спонсорам',
 ];
