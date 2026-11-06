@@ -26,4 +26,5 @@ return [
     'VK Socials' => 'ВКонтакте',
     'Max Messenger' => 'MAX',
     'Odnoklassniki Socials' => 'Одноклассники',
+    'Sponsors' => 'Спонсоры',
 ];

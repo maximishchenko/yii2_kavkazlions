@@ -1,4 +1,8 @@
 <?php
+
+
+/** @var \frontend\models\Contacts $contacts */
+
 use frontend\widgets\MaterialsBlock;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -33,20 +37,15 @@ use yii\helpers\Url;
                         </a>
                     </li>
                     <li>
-                        <a href="/rukovodstvo/">
-                            Руководство
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/sponsory/">
-                            Спонсоры
-                        </a>
-                    </li>
-                    <li>
                         <a href="/dokumentatsiya/">
                             Документация
                         </a>
                     </li> -->
+                    <li>
+                        <a href="<?= Url::toRoute('/sponsors') ?>">
+                            <?= Yii::t('app', 'Sponsors') ?>
+                        </a>
+                    </li>
                     <li>
                         <a href="<?= Url::toRoute('/management') ?>">
                             <?= Yii::t('app', 'Management Title') ?>

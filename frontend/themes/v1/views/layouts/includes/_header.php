@@ -1,5 +1,8 @@
 <?php
 
+
+/** @var \frontend\models\Contacts $contacts */
+
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -39,31 +42,9 @@ use yii\helpers\Url;
                         </li>
                     </ul>
                 </li> -->
-                <!-- <li class="has-sub">
-                    <a href="/rukovodstvo/">
-                        Руководство
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="/rukovodstvo/shkola/">
-                                Руководство «Львы Кавказа» СК
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/rukovodstvo/fvkr/">
-                                Руководство ФВКР
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/rukovodstvo/fkr/">
-                                Руководство ФКР
-                            </a>
-                        </li>
-                    </ul>
-                </li> -->
                 <li class="has-sub">
-                    <a href="/sponsory/">
-                        Спонсоры
+                    <a href="javascript::void(0);">
+                        <?= Yii::t('app', 'Sponsors') ?>
                     </a>
                     <ul>
                         <li>
