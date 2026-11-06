@@ -1,5 +1,5 @@
 /* layout */
-main { padding: 32px 0 56px; }
+main { flex: 1 0 auto; width: 100%; padding: 32px 0 56px; }
 .layout { display: grid; grid-template-columns: 1fr 300px; gap: 32px; }
 .layout.full { grid-template-columns: 1fr; }
 .layout > .content { min-width: 0; }
@@ -22,7 +22,7 @@ main { padding: 32px 0 56px; }
 .sidebar li a:hover, .sidebar li a.active { color: var(--link); font-weight: 700; }
 
 /* footer */
-.footer { background: #000; color: #cfcfcf; padding: 36px 0 20px; border-top: 4px solid var(--brand); }
+.footer { flex: none; background: #000; color: #cfcfcf; padding: 36px 0 20px; border-top: 4px solid var(--brand); }
 .footer a { color: #fff; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 28px; }
 .footer h4 { color: var(--link); margin: 0 0 10px; }

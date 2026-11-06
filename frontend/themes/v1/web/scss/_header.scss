@@ -28,7 +28,8 @@
 .header-contacts a:hover { background: none; color: var(--link); }
 
 /* главная: меню поверх слайдера */
-.home .header { position: fixed; top: 0; left: 0; right: 0; z-index: 60; border-bottom: 0; }
+.home .header { position: fixed; top: 0; left: 0; right: 0; z-index: 60; }
 .home .brand-name, .home .nav > ul > li > a, .home .header-contacts { text-shadow: 0 1px 4px rgba(0, 0, 0, .65); }
+.home .header-contacts { position: relative; top: -8px; }
 .home .slider { aspect-ratio: auto; height: 100vh; height: 100svh; min-height: 360px; }
 .home .slide-caption { padding-bottom: 36px; }

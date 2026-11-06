@@ -1,5 +1,7 @@
 <?php
 
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
 <header class="header">
@@ -137,21 +139,25 @@ use yii\helpers\Url;
                 </li> -->
             </ul>
             <address class="header-contacts">
-                <?php if(Yii::$app->configManager->getItemValue('contactAddress')): ?>
-                <span>
-                    <?= Yii::$app->configManager->getItemValue('contactAddress') ?>
-                </span>
-                <?php endif; ?>
-                <?php if(Yii::$app->configManager->getItemValue('contactEmail')): ?>
-                <a href="mailto:<?= Yii::$app->configManager->getItemValue('contactEmail') ?>">
-                    <?= Yii::$app->configManager->getItemValue('contactEmail') ?>
-                </a>
-                <?php endif; ?>
-                <?php if(Yii::$app->configManager->getItemValue('contactPhone')): ?>
-                <a href="tel:<?= Yii::$app->configManager->getItemValue('contactPhone'); ?>">
-                    <?= Yii::$app->configManager->getItemValue('contactPhone'); ?>
-                </a>
-                <?php endif; ?>
+                <?php foreach (array_unique(ArrayHelper::getColumn($contacts, 'address')) as $address): ?>
+                    <?php if (trim((string) $address) !== ''): ?>
+                    <span><?= Html::encode(trim($address)) ?></span>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <?php foreach (array_unique(ArrayHelper::getColumn($contacts, 'email')) as $email): ?>
+                    <?php if (trim((string) $email) !== ''): ?>
+                    <a href="mailto:<?= Html::encode(trim($email)) ?>">
+                        <?= Html::encode(trim($email)) ?>
+                    </a>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <?php foreach (array_unique(ArrayHelper::getColumn($contacts, 'phone')) as $phone): ?>
+                    <?php if (trim((string) $phone) !== ''): ?>
+                    <a href="tel:<?= Html::encode(preg_replace('/[^\d+]/', '', trim($phone))) ?>">
+                        <?= Html::encode(trim($phone)) ?>
+                    </a>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </address>
         </nav>
     </div>

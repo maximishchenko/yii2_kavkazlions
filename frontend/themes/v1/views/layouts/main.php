@@ -3,10 +3,12 @@
 /** @var \yii\web\View $this */
 /** @var string $content */
 
+use frontend\models\Contacts;
 use frontend\themes\v1\assets\AppAsset;
 use yii\bootstrap5\Html;
 
 AppAsset::register($this);
+$contacts = Contacts::find()->all();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -23,7 +25,7 @@ AppAsset::register($this);
 
 <?= $this->render('includes/_loading') ?>
 
-<?= $this->render('includes/_header') ?>
+<?= $this->render('includes/_header', ['contacts' => $contacts]) ?>
 
 <main id="content">
     <div class="container">
@@ -32,7 +34,7 @@ AppAsset::register($this);
     </div>
 </main>
 
-<?= $this->render('includes/_footer') ?>
+<?= $this->render('includes/_footer', ['contacts' => $contacts]) ?>
 
 <?php $this->endBody() ?>
 </body>

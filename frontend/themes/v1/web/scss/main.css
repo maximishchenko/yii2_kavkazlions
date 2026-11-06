@@ -43,6 +43,10 @@ body {
   background: var(--bg);
   color: var(--text);
   font: 1rem/1.6 "Montserrat", "Segoe UI", Roboto, Arial, sans-serif;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
 button, input, select, textarea {
   font-family: inherit;
@@ -269,10 +273,13 @@ h3 {
   left: 0;
   right: 0;
   z-index: 60;
-  border-bottom: 0;
 }
 .home .brand-name, .home .nav > ul > li > a, .home .header-contacts {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
+}
+.home .header-contacts {
+  position: relative;
+  top: -8px;
 }
 .home .slider {
   aspect-ratio: auto;
@@ -488,6 +495,8 @@ h3 {
 }
 /* layout */
 main {
+  flex: 1 0 auto;
+  width: 100%;
   padding: 32px 0 56px;
 }
 .layout {
@@ -569,6 +578,7 @@ main {
 }
 /* footer */
 .footer {
+  flex: none;
   background: #000;
   color: #cfcfcf;
   padding: 36px 0 20px;

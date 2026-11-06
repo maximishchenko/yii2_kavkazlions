@@ -3,6 +3,7 @@ html { font-size: var(--fs); scroll-padding-top: 6rem; }
 body {
   margin: 0; background: var(--bg); color: var(--text);
   font: 1rem/1.6 "Montserrat", "Segoe UI", Roboto, Arial, sans-serif;
+  min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column;
 }
 button, input, select, textarea { font-family: inherit; }
 img { max-width: 100%; height: auto; display: block; }

@@ -23,28 +23,28 @@ return [
             'type' => 'integer',
         ],
     ],
-    'contactPhone' => [
-        'path' => 'phone',
-        'label' => Yii::t('app', "CONTACT_PHONE"),
-        'description' => Yii::t('app', "CONTACT_PHONE DESCRIPTION"),
-        'value' => "+7 (906) 411-14-07",
-        'rules' => [
-            ['required']
-        ],
-        'inputOptions' => [
-            'type' => 'phone',
-        ],
-    ],
-    'contactEmail' => [
-        'path' => 'email',
-        'label' => Yii::t('app', "CONTACT_EMAIL"),
-        'description' => Yii::t('app', "CONTACT_EMAIL DESCRIPTION"),
-        'value' => "saburu_83@mail.ru",
-        'rules' => [
-            ['required'],
-            ['email']
-        ],
-    ],
+    // 'contactPhone' => [
+    //     'path' => 'phone',
+    //     'label' => Yii::t('app', "CONTACT_PHONE"),
+    //     'description' => Yii::t('app', "CONTACT_PHONE DESCRIPTION"),
+    //     'value' => "+7 (906) 411-14-07",
+    //     'rules' => [
+    //         ['required']
+    //     ],
+    //     'inputOptions' => [
+    //         'type' => 'phone',
+    //     ],
+    // ],
+    // 'contactEmail' => [
+    //     'path' => 'email',
+    //     'label' => Yii::t('app', "CONTACT_EMAIL"),
+    //     'description' => Yii::t('app', "CONTACT_EMAIL DESCRIPTION"),
+    //     'value' => "saburu_83@mail.ru",
+    //     'rules' => [
+    //         ['required'],
+    //         ['email']
+    //     ],
+    // ],
     'contactAddress' => [
         'path' => 'contactAddress',
         'label' => Yii::t('app', "Contact Address"),
