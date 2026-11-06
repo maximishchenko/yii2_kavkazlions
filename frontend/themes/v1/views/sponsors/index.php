@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ListView;
 
+/** @var yii\data\ActiveDataProvider $dataProvider */
+
 $this->title = Yii::t('app', 'Sponsors Title');
 $this->params['breadcrumbs'][] = $this->title;
 ?>

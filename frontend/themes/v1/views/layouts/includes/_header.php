@@ -20,11 +20,11 @@ use yii\helpers\Url;
         </button>
         <nav class="nav" id="nav" aria-label="Главное меню">
             <ul>
-                <!-- <li>
-                    <a href="/istoriya/">
-                        История
+                <li>
+                    <a href="<?= Url::toRoute('/history') ?>">
+                        <?= Yii::t('app', 'History') ?>
                     </a>
-                </li> -->
+                </li>
                 <!-- <li class="has-sub">
                     <a href="/khronika/">
                         Хроника событий

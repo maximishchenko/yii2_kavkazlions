@@ -32,7 +32,7 @@ return [
     'CONTACTS_PARALLAX_TITLE_DESCRIPTION' => 'Основной заголовок баннера',
     'CONTACTS_PARALLAX_SUBTITLE' => 'Подзаголовок баннера',
     'CONTACTS_PARALLAX_SUBTITLE_DESCRIPTION' => 'Дополнительный заголовок баннера',
-    'TAB_MATERIALS' => 'Ссылки на материалаы',
+    'TAB_MATERIALS' => 'Ссылки на материалы',
     'SPONSORS_PROPOSAL_ID' => 'ID материала "Предложения спонсорам"',
     "MATERIAL_ID DESCRIPTION"  => 'Если существует активный материал с таким ID - данные будет отображены на странице',
     'CONTACTS_PARALLAX_TITLE_ID' => 'Заголовок баннера на странице "Контакты"',

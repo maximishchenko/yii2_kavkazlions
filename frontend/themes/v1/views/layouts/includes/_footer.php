@@ -26,12 +26,12 @@ use yii\helpers\Url;
                     <?= Yii::t('app', 'Website sections') ?>
                 </h4>
                 <ul>
-                    <!-- <li>
-                        <a href="/istoriya/">
-                            История
+                    <li>
+                        <a href="<?= Url::toRoute('/history') ?>">
+                            <?= Yii::t('app', 'History') ?>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="/khronika/">
                             Хроника событий
                         </a>

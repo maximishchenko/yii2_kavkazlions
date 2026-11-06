@@ -2,6 +2,7 @@
 
 /** @var yii\web\View $this */
 /** @var mixed $sponsorsProposal */
+/** @var mixed $sponsorsBottomProposal */
 
 $this->title = Yii::t('app', 'Sponsors Proposal Title');
 $this->params['breadcrumbs'][] = $this->title;

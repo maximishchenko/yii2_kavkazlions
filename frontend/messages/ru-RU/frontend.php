@@ -27,4 +27,6 @@ return [
     'Max Messenger' => 'MAX',
     'Odnoklassniki Socials' => 'Одноклассники',
     'Sponsors' => 'Спонсоры',
+    'History Title' => 'История',
+    'History' => 'История',
 ];
