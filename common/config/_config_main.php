@@ -23,36 +23,6 @@ return [
             'type' => 'integer',
         ],
     ],
-    // 'contactPhone' => [
-    //     'path' => 'phone',
-    //     'label' => Yii::t('app', "CONTACT_PHONE"),
-    //     'description' => Yii::t('app', "CONTACT_PHONE DESCRIPTION"),
-    //     'value' => "+7 (906) 411-14-07",
-    //     'rules' => [
-    //         ['required']
-    //     ],
-    //     'inputOptions' => [
-    //         'type' => 'phone',
-    //     ],
-    // ],
-    // 'contactEmail' => [
-    //     'path' => 'email',
-    //     'label' => Yii::t('app', "CONTACT_EMAIL"),
-    //     'description' => Yii::t('app', "CONTACT_EMAIL DESCRIPTION"),
-    //     'value' => "saburu_83@mail.ru",
-    //     'rules' => [
-    //         ['required'],
-    //         ['email']
-    //     ],
-    // ],
-    'contactAddress' => [
-        'path' => 'contactAddress',
-        'label' => Yii::t('app', "Contact Address"),
-        'description' => Yii::t('app', "Contact Address DESCRIPTION"),
-        'value' => "г. Минеральные Воды, ул. Пятигорская, 25",
-        'rules' => [
-        ],
-    ],
     'mapApiKey' => [
         'path' => 'mapApiKey',
         'label' => Yii::t('app', "MAP API KEY"),
@@ -85,6 +55,15 @@ return [
         'path' => 'socialsMax',
         'label' => Yii::t('app', "Socials Max"),
         'description' => Yii::t('app', "Socials Max DESCRIPTION"),
+        'value' => "http://www.ok.ru/dskelvykav",
+        'rules' => [
+            ['url']
+        ],
+    ],
+    'socialsOk' => [
+        'path' => 'socialsOk',
+        'label' => Yii::t('app', "Socials OK"),
+        'description' => Yii::t('app', "Socials OK DESCRIPTION"),
         'value' => "",
         'rules' => [
             ['url']

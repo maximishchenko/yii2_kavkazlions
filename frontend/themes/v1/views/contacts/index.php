@@ -7,6 +7,8 @@ use frontend\models\Contacts;
 /** @var string $contactsParallaxTitle */
 /** @var string $contactsParallaxSubTitle */
 /** @var Contacts | array $contacts */
+/** @var string $contactsBottomParallaxTitle */
+/** @var string $contactsBottomParallaxSubTitle */
 
 $this->title = Yii::t('app', 'Contact Title');
 $this->params['breadcrumbs'][] = $this->title;
@@ -74,7 +76,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <svg class="icon" viewBox="0 0 17 17" aria-hidden="true">
                                 <use xlink:href="/images/sprites/sprite.svg#vk"></use>
                             </svg>
-                            ВКонтакте
+                            <?= Yii::t('app', 'VK Socials') ?>
                         </a>
                     </li>
                     <?php endif; ?>
@@ -84,7 +86,17 @@ $this->params['breadcrumbs'][] = $this->title;
                             <svg class="icon" viewBox="0 0 17 17" aria-hidden="true">
                                 <use xlink:href="/images/sprites/sprite.svg#max"></use>
                             </svg>
-                            MAX
+                            <?= Yii::t('app', 'Max Messenger') ?>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+                    <?php if(Yii::$app->configManager->getItemValue('socialsOk')): ?>
+                    <li>
+                        <a href="<?= Yii::$app->configManager->getItemValue('socialsOk') ?>" target="_blank">
+                            <svg class="icon" viewBox="0 0 17 17" aria-hidden="true">
+                                <use xlink:href="/images/sprites/sprite.svg#ok"></use>
+                            </svg>
+                            <?= Yii::t('app', 'Odnoklassniki Socials') ?>
                         </a>
                     </li>
                     <?php endif; ?>
