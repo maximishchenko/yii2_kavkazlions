@@ -6,6 +6,6 @@ namespace backend\modules\content\models\query;
 
 use backend\models\query\BaseModelQuery;
 
-class ManagementLeaderQuery extends BaseModelQuery
+final class ManagementLeaderQuery extends BaseModelQuery
 {
 }

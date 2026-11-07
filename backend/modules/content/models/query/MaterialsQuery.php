@@ -6,6 +6,6 @@ namespace backend\modules\content\models\query;
 
 use backend\models\query\BaseModelQuery;
 
-class MaterialsQuery extends BaseModelQuery
+final class MaterialsQuery extends BaseModelQuery
 {
 }

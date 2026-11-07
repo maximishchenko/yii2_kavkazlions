@@ -6,6 +6,6 @@ namespace backend\modules\content\models\query;
 
 use backend\models\query\BaseModelQuery;
 
-class HistoryQuery extends BaseModelQuery
+final class HistoryQuery extends BaseModelQuery
 {
 }

@@ -72,6 +72,16 @@ use hail812\adminlte\widgets\SmallBox;
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                                     <?= SmallBox::widget([
+                                        'title' => Yii::t('app', 'PARTNER_SERVICES'),
+                                        'text' => Yii::t('app', 'PARTNERS_SERVICES Edit'),
+                                        'icon' => 'fas fa-shopping-cart',
+                                        'theme' => 'success',
+                                        'linkText' => Yii::t('app', 'GO_LINK'),
+                                        'linkUrl' => Url::to(['/content/partner-services'])
+                                    ]) ?>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <?= SmallBox::widget([
                                         'title' => Yii::t('app', 'HISTORY'),
                                         'text' => Yii::t('app', 'HISTORY Edit'),
                                         'icon' => 'fas fa-book',

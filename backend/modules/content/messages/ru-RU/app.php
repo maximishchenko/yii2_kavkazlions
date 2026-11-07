@@ -80,4 +80,13 @@ return [
     'HISTORY_TITLE_IS_OPTIONAL' => 'Заголовок не обязателен для заполнения',
     'HISTORY_DESCRIPTION_IS_REQUIRED' => 'Текст описания обязателен для заполнения',
     'MANAGEMENT_HISTORY_SERVCIE_ADDITIONAL_HINT' => 'Служебная информация',
+    'PARTNER_SERVICES' => 'Услуги партнеров',
+    'PARTNERS_SERVICES Edit' => 'Управление составом партнерских услуг',
+    'Partner Services' => 'Услуги партнеров',
+    'Partner Services Name' => 'Наименование услуги',
+    'Partner Services Description' => 'Текст описания услуги',
+    'Images Files' => 'Изображения',
+    'Partner Services Name Hint' => 'Наименование услуги, отображаемое на сайте',
+    'Partner Services Description Hint' => 'Описание состава услуги, отображаемое на сайте',
+    'Images Files Hint' => 'Загружаемые файлы',
 ];

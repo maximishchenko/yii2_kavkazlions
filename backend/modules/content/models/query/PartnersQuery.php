@@ -6,6 +6,6 @@ namespace backend\modules\content\models\query;
 
 use backend\models\query\BaseModelQuery;
 
-class PartnersQuery extends BaseModelQuery
+final class PartnersQuery extends BaseModelQuery
 {
 }
