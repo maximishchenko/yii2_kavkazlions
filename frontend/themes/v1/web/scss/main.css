@@ -1069,7 +1069,7 @@ main {
 .history-item__image img {
   width: 100%;
   aspect-ratio: 1.7777777778;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 .history-item__image a:hover img, .history-item__image a:focus-visible img {

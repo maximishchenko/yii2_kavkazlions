@@ -182,7 +182,7 @@
 .history-item:nth-child(even) .history-item__image { order: 2; }
 .history-item__image { overflow: hidden; border-radius: var(--radius); }
 .history-item__image a { display: block; cursor: zoom-in; }
-.history-item__image img { width: 100%; aspect-ratio: 16/9; object-fit: cover; transition: transform .3s ease, filter .3s ease; }
+.history-item__image img { width: 100%; aspect-ratio: 16/9; object-fit: contain; transition: transform .3s ease, filter .3s ease; }
 .history-item__image a:hover img, .history-item__image a:focus-visible img { transform: scale(1.05); filter: brightness(1.1); }
 .history-item__title { margin-bottom: 16px; }
 .history-item__content > :last-child { margin-bottom: 0; }
