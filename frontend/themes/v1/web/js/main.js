@@ -487,12 +487,25 @@
       });
     }
 
-    gallery.addEventListener('mousemove', function (event) {
+    function showImageAt(clientX) {
       var bounds = gallery.getBoundingClientRect();
-      var position = Math.max(0, Math.min(event.clientX - bounds.left, bounds.width - 1));
+      var position = Math.max(0, Math.min(clientX - bounds.left, bounds.width - 1));
       showImage(Math.floor(position / bounds.width * images.length));
+    }
+
+    gallery.addEventListener('mousemove', function (event) {
+      showImageAt(event.clientX);
     });
+    gallery.addEventListener('touchmove', function (event) {
+      if (event.touches.length) showImageAt(event.touches[0].clientX);
+    }, {passive: true});
     gallery.addEventListener('mouseleave', function () {
+      showImage(0);
+    });
+    gallery.addEventListener('touchend', function () {
+      showImage(0);
+    });
+    gallery.addEventListener('touchcancel', function () {
       showImage(0);
     });
   });
