@@ -43,4 +43,6 @@ return [
     'CONTACTS_PARALLAX_BOTTOM_SUBTITLE_ID' => 'ID заголовка баннера под картой на странице контакты',
     'SPONSORS_PROPOSAL_BOTTOM_ID' => 'ID заголовка баннера под предложениями спонсорам',
     'HISTORY_ID' => 'ID материала "История"',
+    'HISTORY_PARALLAX_TOP_TITLE_ID' => 'ID материала текст баннера на странице История',
+    'HISTORY_PARALLAX_BOTOM_TITLE_ID' => 'ID материала текст баннера внизу страницы История',
 ];

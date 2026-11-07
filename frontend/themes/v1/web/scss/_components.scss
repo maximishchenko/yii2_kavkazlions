@@ -47,6 +47,9 @@
 .sponsors-parallax {
   background-image: url(/images/static/parallax/bg-sponsors.webp);
 }
+.history-parallax {
+  background-image: url(/images/static/parallax/bg-history.jpg);
+}
 
 /* parallax section on contacts page */
 .contacts-parallax {
@@ -180,9 +183,11 @@
 .history-list { display: grid; gap: 48px; margin: 32px 0; }
 .history-item { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; align-items: center; }
 .history-item:nth-child(even) .history-item__image { order: 2; }
-.history-item__image { overflow: hidden; border-radius: var(--radius); }
-.history-item__image a { display: block; cursor: zoom-in; }
-.history-item__image img { width: 100%; aspect-ratio: 16/9; object-fit: contain; transition: transform .3s ease, filter .3s ease; }
+.history-item__image { position: relative; overflow: hidden; aspect-ratio: 16/9; border-radius: var(--radius); background: var(--surface); }
+.history-item__background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(20px); transform: scale(1.15); }
+.history-item__image a { position: relative; display: block; height: 100%; cursor: zoom-in; }
+.history-item__picture { display: block; width: 100%; height: 100%; }
+.history-item__picture img { width: 100%; height: 100%; object-fit: contain; transition: transform .3s ease, filter .3s ease; }
 .history-item__image a:hover img, .history-item__image a:focus-visible img { transform: scale(1.05); filter: brightness(1.1); }
 .history-item__title { margin-bottom: 16px; }
 .history-item__content > :last-child { margin-bottom: 0; }

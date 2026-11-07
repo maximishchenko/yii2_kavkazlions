@@ -7,8 +7,14 @@ use yii\helpers\Html;
 ?>
 <?php if ($imageUrl = $model->getImageUrl()): ?>
     <div class="history-item__image">
+        <?= Html::img($imageUrl, [
+            'class' => 'history-item__background',
+            'alt' => '',
+            'aria-hidden' => 'true',
+            'loading' => 'lazy',
+        ]) ?>
         <a href="<?= Html::encode($imageUrl) ?>" data-fancybox="history" data-caption="<?= Html::encode($model->title) ?>">
-            <picture>
+            <picture class="history-item__picture">
                 <?php if ($webpUrl = $model->getImageWebpUrl()): ?>
                     <source srcset="<?= Html::encode($webpUrl) ?>" type="image/webp">
                 <?php endif; ?>

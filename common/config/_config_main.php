@@ -166,4 +166,22 @@ return [
             'type' => 'number',
         ],
     ],
+    'historyTopParallaxTitleID' => [
+        'path' => 'historyTopParallaxTitleID',
+        'label' => Yii::t('app', "HISTORY_PARALLAX_TOP_TITLE_ID"),
+        'description' => Yii::t('app', "MATERIAL_ID DESCRIPTION"),
+        'value' => "",
+        'inputOptions' => [
+            'type' => 'number',
+        ],
+    ],
+    'historyBottomParallaxTitleID' => [
+        'path' => 'historyBottomParallaxTitleID',
+        'label' => Yii::t('app', "HISTORY_PARALLAX_BOTOM_TITLE_ID"),
+        'description' => Yii::t('app', "MATERIAL_ID DESCRIPTION"),
+        'value' => "",
+        'inputOptions' => [
+            'type' => 'number',
+        ],
+    ],
 ];

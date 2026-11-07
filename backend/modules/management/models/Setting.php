@@ -56,6 +56,8 @@ class Setting extends \yii\base\Model
                 'templateFooterSloganID',
                 'templateCompanyFullNameID',
                 'sponsorsProposalBottomId',
+                'historyTopParallaxTitleID',
+                'historyBottomParallaxTitleID',
             ],
         ];
     }
