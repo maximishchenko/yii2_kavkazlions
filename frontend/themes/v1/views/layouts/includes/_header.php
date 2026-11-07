@@ -57,6 +57,11 @@ use yii\helpers\Url;
                                 <?= Yii::t('app', 'Proposal for sponsors') ?>
                             </a>
                         </li>
+                        <li>
+                            <a href="<?= Url::toRoute('/sponsors/partners-services/') ?>">
+                                <?= Yii::t('app', 'Partners Services') ?>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <!-- <li class="has-sub">

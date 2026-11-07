@@ -39,4 +39,9 @@ final class SponsorsController extends BaseController
             'dataProvider' => $dataProvider,
         ]);
     }
+
+    public function actionPartnersServices(): string
+    {
+        return $this->render('partners-services', []);
+    }
 }

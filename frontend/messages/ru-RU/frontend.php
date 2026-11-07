@@ -29,4 +29,6 @@ return [
     'Sponsors' => 'Спонсоры',
     'History Title' => 'История',
     'History' => 'История',
+    'Partners Services' => 'Партнерские услуги',
+    'Sponsors Partners Services' => 'Партнерские услуги',
 ];
