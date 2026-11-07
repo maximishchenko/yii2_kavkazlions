@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace frontend\controllers;
 
 use frontend\controllers\BaseController;
+use frontend\models\search\PartnerServicesSearch;
 use frontend\models\search\PartnersSearch;
 use frontend\widgets\MaterialsBlock;
 use Yii;
@@ -42,6 +43,10 @@ final class SponsorsController extends BaseController
 
     public function actionPartnersServices(): string
     {
-        return $this->render('partners-services', []);
+        $searchModel = new PartnerServicesSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams);
+        return $this->render('partners-services', [
+            'dataProvider' => $dataProvider,
+        ]);
     }
 }

@@ -736,6 +736,9 @@ main {
 .sponsors-parallax {
   background-image: url(/images/static/parallax/bg-sponsors.webp);
 }
+.partners-services-parallax {
+  background-image: url(/images/static/parallax/bg-partners-services.jpg);
+}
 .history-parallax {
   background-image: url(/images/static/parallax/bg-history.jpg);
 }
@@ -838,6 +841,36 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.partner-service-gallery {
+  position: relative;
+}
+.partner-service-gallery img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.partner-service-gallery img.is-active {
+  opacity: 1;
+}
+.partner-service-gallery-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  z-index: 1;
+  display: flex;
+  gap: 6px;
+  transform: translateX(-50%);
+}
+.partner-service-gallery-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffffff80;
+  box-shadow: 0 1px 3px #0008;
+}
+.partner-service-gallery-dots span.is-active {
+  background: #fff;
 }
 .card-body {
   padding: 14px 16px 18px;
@@ -1169,6 +1202,9 @@ table.data th {
   overflow-x: auto;
 }
 /* sponsors */
+.partner-services-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 .logos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -1195,7 +1231,7 @@ table.data th {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
-  margin: 32px 0;
+  margin: 0 0 32px;
 }
 .sponsor-card {
   position: relative;
@@ -1456,7 +1492,7 @@ table.data th {
 }
 @media (max-width: 900px) {
   /* текст подписи не заходит под плавающие кнопки */
-  .cards-4 {
+  .cards-4, .partner-services-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .grid-3 {
@@ -1483,7 +1519,7 @@ table.data th {
 }
 @media (max-width: 760px) {
   /* на телефоне места хватает: прежние размеры пунктов и контактов */
-  .cards-4 {
+  .cards-4, .partner-services-list {
     grid-template-columns: 1fr;
   }
   .benefits-track {

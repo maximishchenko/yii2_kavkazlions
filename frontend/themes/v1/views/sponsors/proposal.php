@@ -20,11 +20,16 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </section>
 
-<?php if ($sponsorsProposal): ?>
-    <div class="prose">
-        <?= $sponsorsProposal ?>
+<div class="layout">
+    <div class="content">
+        <?php if ($sponsorsProposal): ?>
+            <div class="prose">
+                <?= $sponsorsProposal ?>
+            </div>
+        <?php endif; ?>
     </div>
-<?php endif; ?>
+    <?= $this->render('_sidebar', ['activePage' => 'proposal']) ?>
+</div>
 
 <section class="home-parallax sponsors-parallax" aria-label="<?= $this->title ?>">
     <div class="home-parallax-overlay"></div>

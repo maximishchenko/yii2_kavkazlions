@@ -28,7 +28,7 @@
 }
 
 @media (max-width: 900px) {
-  .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cards-4, .partner-services-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .benefits-track { --benefits-visible: 2; }
   .benefits-slide { flex-basis: calc((100% - 16px) / 2); }
@@ -39,7 +39,7 @@
   .slide-caption { padding-right: calc(var(--gutter) + 56px); }
 }
 @media (max-width: 760px) {
-  .cards-4 { grid-template-columns: 1fr; }
+  .cards-4, .partner-services-list { grid-template-columns: 1fr; }
   .benefits-track { --benefits-visible: 1; --benefits-peek: clamp(28px, 10vw, 44px); }
   .benefits-slide { flex-basis: calc(100% - var(--benefits-gap) - var(--benefits-peek)); }
   .benefits-track::after { content: ""; flex: 0 0 var(--benefits-peek); }

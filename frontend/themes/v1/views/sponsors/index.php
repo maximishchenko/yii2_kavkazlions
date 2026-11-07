@@ -21,16 +21,21 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </section>
 
-<?= ListView::widget([
-    'dataProvider' => $dataProvider,
-    'options' => ['class' => 'sponsors-list'],
-    'itemOptions' => ['class' => 'sponsor-card'],
-    'itemView' => static function ($model) {
-        return Html::tag('h2', Html::encode($model->name), ['class' => 'sponsor-card-name']);
-    },
-    'layout' => "{items}\n{pager}",
-    'emptyText' => '',
-]) ?>
+<div class="layout">
+    <div class="content">
+        <?= ListView::widget([
+            'dataProvider' => $dataProvider,
+            'options' => ['class' => 'sponsors-list'],
+            'itemOptions' => ['class' => 'sponsor-card'],
+            'itemView' => static function ($model) {
+                return Html::tag('h2', Html::encode($model->name), ['class' => 'sponsor-card-name']);
+            },
+            'layout' => "{items}\n{pager}",
+            'emptyText' => '',
+        ]) ?>
+    </div>
+    <?= $this->render('_sidebar', ['activePage' => 'index']) ?>
+</div>
 
 <section class="home-parallax sponsors-parallax" aria-label="<?= Yii::t('app', 'Sponsors Index Parallax Bottom Title') ?>">
     <div class="home-parallax-overlay"></div>

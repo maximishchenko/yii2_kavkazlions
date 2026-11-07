@@ -47,6 +47,9 @@
 .sponsors-parallax {
   background-image: url(/images/static/parallax/bg-sponsors.webp);
 }
+.partners-services-parallax {
+  background-image: url(/images/static/parallax/bg-partners-services.jpg);
+}
 .history-parallax {
   background-image: url(/images/static/parallax/bg-history.jpg);
 }
@@ -131,6 +134,12 @@
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
 .card-img { aspect-ratio: 16/10; width: 100%; overflow: hidden; background-color: #1e1311; background-image: url(/assets/img/card-placeholder.webp), linear-gradient(135deg, #3a2a24, var(--brand)); background-position: center, center; background-size: cover, cover; background-repeat: no-repeat, no-repeat; }
 .card-img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.partner-service-gallery { position: relative; }
+.partner-service-gallery img { position: absolute; inset: 0; opacity: 0; }
+.partner-service-gallery img.is-active { opacity: 1; }
+.partner-service-gallery-dots { position: absolute; left: 50%; bottom: 10px; z-index: 1; display: flex; gap: 6px; transform: translateX(-50%); }
+.partner-service-gallery-dots span { width: 7px; height: 7px; border-radius: 50%; background: #ffffff80; box-shadow: 0 1px 3px #0008; }
+.partner-service-gallery-dots span.is-active { background: #fff; }
 .card-body { padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .card-body h3 { margin: 0; }
 .card-body h3 a { color: var(--text); text-decoration: none; }
@@ -206,10 +215,11 @@ table.data th { background: var(--brand); color: #fff; }
 .table-wrap { overflow-x: auto; }
 
 /* sponsors */
+.partner-services-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .logos { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 16px; }
 .logos .logo-box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; text-align: center; }
 .logos .ph { aspect-ratio: 3/2; display: grid; place-items: center; background: #ffffff12; border-radius: 6px; margin-bottom: 10px; font-weight: 700; color: var(--muted); }
-.sponsors-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin: 32px 0; }
+.sponsors-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin: 0 0 32px; }
 .sponsor-card { position: relative; overflow: hidden; background: rgba(67, 67, 66, .5); backdrop-filter: blur(40px); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
 .sponsor-card::before { content: ""; position: absolute; left: 0; top: 0; width: 0; height: 100%; background: #434342; border-radius: 0 400px 400px 0; transition: all .5s linear; }
 .sponsor-card:hover::before { width: 100%; border-radius: 0; }

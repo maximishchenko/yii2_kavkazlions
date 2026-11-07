@@ -470,4 +470,30 @@
     window.addEventListener('resize', render);
     render();
   });
+
+  document.querySelectorAll('[data-partner-service-gallery]').forEach(function (gallery) {
+    var images = gallery.querySelectorAll('img');
+    if (images.length < 2) return;
+    var dots = gallery.querySelectorAll('.partner-service-gallery-dots span');
+
+    function showImage(index) {
+      images.forEach(function (image, imageIndex) {
+        var active = imageIndex === index;
+        image.classList.toggle('is-active', active);
+        image.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+      dots.forEach(function (dot, dotIndex) {
+        dot.classList.toggle('is-active', dotIndex === index);
+      });
+    }
+
+    gallery.addEventListener('mousemove', function (event) {
+      var bounds = gallery.getBoundingClientRect();
+      var position = Math.max(0, Math.min(event.clientX - bounds.left, bounds.width - 1));
+      showImage(Math.floor(position / bounds.width * images.length));
+    });
+    gallery.addEventListener('mouseleave', function () {
+      showImage(0);
+    });
+  });
 })();
