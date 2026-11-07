@@ -35,6 +35,10 @@ final class MaterialsBlock extends Widget
             return '';
         }
 
-        return HtmlPurifier::process($material->text);
+        return HtmlPurifier::process($material->text, function ($config) {
+            $definition = $config->getHTMLDefinition(true);
+            $definition->addAttribute('a', 'data-fancybox', 'Text');
+            $definition->addAttribute('a', 'data-caption', 'Text');
+        });
     }
 }

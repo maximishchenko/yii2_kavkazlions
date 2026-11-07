@@ -70,6 +70,16 @@ use hail812\adminlte\widgets\SmallBox;
                                         'linkUrl' => Url::to(['/content/partners'])
                                     ]) ?>
                                 </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <?= SmallBox::widget([
+                                        'title' => Yii::t('app', 'HISTORY'),
+                                        'text' => Yii::t('app', 'HISTORY Edit'),
+                                        'icon' => 'fas fa-book',
+                                        'theme' => 'success',
+                                        'linkText' => Yii::t('app', 'GO_LINK'),
+                                        'linkUrl' => Url::to(['/content/history'])
+                                    ]) ?>
+                                </div>
                             </div>
                         </div>
                     </div>

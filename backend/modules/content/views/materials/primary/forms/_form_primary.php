@@ -1,5 +1,6 @@
 <?php
 use vova07\imperavi\Widget;
+use yii\helpers\Url;
 
 /** @var backend\modules\content\models\ManagementLeader $model */
 /** @var backend\widgets\BaseActiveForm $form */
@@ -18,9 +19,13 @@ use vova07\imperavi\Widget;
             'settings' => [
                 'lang' => 'ru',
                 'minHeight' => 200,
+                'imageUpload' => Url::to(['/content/materials/image-upload']),
+                'fileUpload' => Url::to(['/content/materials/file-upload']),
                 'plugins' => [
                     'clips',
                     'fullscreen',
+                    'imagemanager',
+                    'filemanager',
                 ],
                 'clips' => [
                     ['Lorem ipsum...', 'Lorem...'],

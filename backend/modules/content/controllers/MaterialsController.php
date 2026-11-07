@@ -8,10 +8,28 @@ use backend\modules\content\models\search\MaterialsSearch;
 use backend\modules\content\models\Materials;
 use backend\controllers\BaseCrudController;
 use yii\web\Response;
+use vova07\imperavi\actions\UploadFileAction;
 use Yii;
 
 final class MaterialsController extends BaseCrudController
 {
+
+    public function actions(): array
+    {
+        return [
+            'image-upload' => [
+                'class' => UploadFileAction::class,
+                'url' => '/uploads/materials/images/',
+                'path' => '@frontend/web/uploads/materials/images',
+            ],
+            'file-upload' => [
+                'class' => UploadFileAction::class,
+                'url' => '/uploads/materials/files/',
+                'path' => '@frontend/web/uploads/materials/files',
+                'uploadOnlyImage' => false,
+            ],
+        ];
+    }
 
     public function actionIndex(): string
     {

@@ -65,4 +65,7 @@
   .grid-3 { grid-template-columns: 1fr; }
   .leader-profile { grid-template-columns: 1fr; }
   .leader-profile__photo { max-width: 300px; margin: 0 auto; }
+  .history-list { gap: 32px; }
+  .history-item { grid-template-columns: 1fr; gap: 20px; }
+  .history-item:nth-child(even) .history-item__image { order: 0; }
 }
