@@ -31,4 +31,5 @@ return [
     'History' => 'История',
     'Partners Services' => 'Партнерские услуги',
     'Sponsors Partners Services' => 'Партнерские услуги',
+    'Sponsors Partner Service Title {service}' => 'Услуга: {service}',
 ];

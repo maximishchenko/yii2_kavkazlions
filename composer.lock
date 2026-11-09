@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc4b7875456976f4fe43d9019f0a9832",
+    "content-hash": "d7de909435545be7541e14f70197dc19",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -605,6 +605,19 @@
             "type": "npm-asset",
             "license": [
                 "SEE LICENSE IN LICENSE.md"
+            ]
+        },
+        {
+            "name": "npm-asset/swiper",
+            "version": "14.4.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/swiper/-/swiper-14.4.0.tgz",
+                "shasum": "9c6a7f787e1afdb52862e3f2c7c0d16bc3652108"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
             ]
         },
         {

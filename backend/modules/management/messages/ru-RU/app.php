@@ -45,4 +45,6 @@ return [
     'HISTORY_ID' => 'ID материала "История"',
     'HISTORY_PARALLAX_TOP_TITLE_ID' => 'ID материала текст баннера на странице История',
     'HISTORY_PARALLAX_BOTOM_TITLE_ID' => 'ID материала текст баннера внизу страницы История',
+    'PARTNERS_SERVICES_PARALLAX_TOP_TITLE_ID' => 'ID материала текст баннера Партнерские услуги',
+    'PARTNERS_SERVICES_PARALLAX_BOTOM_TITLE_ID' => 'ID материала текст баннера внизу страницы Партнерские услуги',
 ];

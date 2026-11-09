@@ -23,7 +23,8 @@
         "cebe/yii2-gravatar": "^1.1",
         "yii2tech/config": "^1.0",
         "npm-asset/fancyapps--ui": "^6.1",
-        "vova07/yii2-imperavi-widget": "*"
+        "vova07/yii2-imperavi-widget": "*",
+        "npm-asset/swiper": "^14.4"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

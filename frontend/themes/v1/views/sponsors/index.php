@@ -6,6 +6,7 @@ use yii\widgets\ListView;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = Yii::t('app', 'Sponsors Title');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Sponsors'), 'url' => ['/sponsors']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h1 class="page-title">

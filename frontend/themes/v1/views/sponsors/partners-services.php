@@ -7,18 +7,23 @@ use yii\widgets\ListView;
 /** @var yii\web\View $this */
 /** @var frontend\models\search\PartnerServicesSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
+/** @var mixed $sponsorsServices */
+/** @var mixed $sponsorsBottomServices */
 
 $this->title = Yii::t('app', 'Sponsors Partners Services');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Sponsors'), 'url' => ['/sponsors']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h1 class="page-title">
     <?= $this->title ?>
 </h1>
 
-<section class="home-parallax partners-services-parallax" aria-label="Партнёрство для развития спорта">
+<section class="home-parallax partners-services-parallax">
     <div class="home-parallax-overlay"></div>
     <div class="home-parallax-content">
-        <h2 class="home-parallax-title">Партнёрство для развития спорта</h2>
+        <h2 class="home-parallax-title">
+            <?= $sponsorsServices ?>
+        </h2>
     </div>
 </section>
 
@@ -55,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 $bodyContent = Html::tag('h3', Html::encode($model->name));
 
-                $bodyContent .= Html::a('Подробнее', 'javascript::void(0)', ['class' => 'more']);
+                $bodyContent .= Html::a('Подробнее', '/sponsors/partners-services/' . $model->slug, ['class' => 'more']);
 
                 return Html::tag('div', $imageContent, [
                         'class' => 'card-img partner-service-gallery',
@@ -70,9 +75,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= $this->render('_sidebar', ['activePage' => 'partners-services']) ?>
 </div>
 
-<section class="home-parallax partners-services-parallax" aria-label="Вместе — к новым победам">
+<section class="home-parallax partners-services-parallax">
     <div class="home-parallax-overlay"></div>
     <div class="home-parallax-content">
-        <h2 class="home-parallax-title">Вместе — к новым победам</h2>
+        <h2 class="home-parallax-title">
+            <?= $sponsorsBottomServices ?>
+        </h2>
     </div>
 </section>

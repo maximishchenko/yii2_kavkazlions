@@ -1205,6 +1205,33 @@ table.data th {
 .partner-services-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.partner-service-slider {
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
+  --swiper-pagination-bullet-inactive-color: #ffffff80;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.partner-service-slider .swiper-slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.3333333333;
+  object-fit: cover;
+}
+.partner-service-slider .swiper-button-prev, .partner-service-slider .swiper-button-next {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #00000066;
+}
+.partner-service-slider .swiper-button-prev::after, .partner-service-slider .swiper-button-next::after {
+  font-size: 14px;
+}
+.partner-service-slider .swiper-pagination-bullet {
+  box-shadow: 0 1px 3px #0008;
+}
 .logos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));

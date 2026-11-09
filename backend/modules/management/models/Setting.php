@@ -58,6 +58,8 @@ class Setting extends \yii\base\Model
                 'sponsorsProposalBottomId',
                 'historyTopParallaxTitleID',
                 'historyBottomParallaxTitleID',
+                'partnersServicesTopParallaxTitleID',
+                'partnersServicesBottomParallaxTitleID',
             ],
         ];
     }

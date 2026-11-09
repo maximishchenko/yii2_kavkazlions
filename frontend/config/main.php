@@ -98,6 +98,8 @@ return [
                 'management/<companySlug:[\w-]+>/<slug:[\w-]+>' => 'management/leader',
                 'management/<slug:[\w-]+>' => 'management/view',
                 'sponsors' => 'sponsors/index',
+                'sponsors/partners-services' => 'sponsors/partners-services',
+                'sponsors/partners-services/<slug:[\w-]+>' => 'sponsors/partners-services-view',
             ],
         ],
     ],

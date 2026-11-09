@@ -184,4 +184,22 @@ return [
             'type' => 'number',
         ],
     ],
+    'partnersServicesTopParallaxTitleID' => [
+        'path' => 'partnersServicesTopParallaxTitleID',
+        'label' => Yii::t('app', "PARTNERS_SERVICES_PARALLAX_TOP_TITLE_ID"),
+        'description' => Yii::t('app', "MATERIAL_ID DESCRIPTION"),
+        'value' => "",
+        'inputOptions' => [
+            'type' => 'number',
+        ],
+    ],
+    'partnersServicesBottomParallaxTitleID' => [
+        'path' => 'partnersServicesBottomParallaxTitleID',
+        'label' => Yii::t('app', "PARTNERS_SERVICES_PARALLAX_BOTOM_TITLE_ID"),
+        'description' => Yii::t('app', "MATERIAL_ID DESCRIPTION"),
+        'value' => "",
+        'inputOptions' => [
+            'type' => 'number',
+        ],
+    ],
 ];
