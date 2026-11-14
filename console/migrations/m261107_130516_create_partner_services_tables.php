@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use console\models\BaseMigration;
 
-class m261107_130516_create_partner_services_tables extends BaseMigration
+final class m261107_130516_create_partner_services_tables extends BaseMigration
 {
     public function safeUp(): void
     {

@@ -85,7 +85,7 @@ final class HistoryController extends BaseCrudController
         return $this->redirect(Yii::$app->request->referrer);
     }
 
-    public function getModelClass(): string
+    protected function getModelClass(): string
     {
         return History::class;
     }

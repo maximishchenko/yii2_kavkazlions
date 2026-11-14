@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use console\models\BaseMigration;
 
-class m261107_090534_create_history_table extends BaseMigration
+final class m261107_090534_create_history_table extends BaseMigration
 {
     public function safeUp(): void
     {
