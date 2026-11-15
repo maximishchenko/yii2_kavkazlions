@@ -106,4 +106,14 @@ return [
     'Parent Category' => 'Родительская категория',
     'Parent Category Hint' => 'Выбор родительской категории для текущей категории',
     'No parent' => 'Без родителя',
+    'Documents Attaches' => 'Вложения',
+    'Create new attach record' => 'Добавить вложение',
+    'Document Attach Name' => 'Название вложения',
+    'Document Attach' => 'Файл вложения',
+    'Document Description' => 'Описание вложения',
+    'Document Name Hint' => 'Название документа. Отображается в ссылка на сайте',
+    'Document Attach Hint' => 'Файл вложения, который будет доступен для загрузки на сайте',
+    'Document Description Hint' => 'Текст описания вложения',
+    'Attach block' => 'Вложения',
+    
 ];

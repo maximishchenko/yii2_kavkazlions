@@ -90,6 +90,26 @@ use hail812\adminlte\widgets\SmallBox;
                                         'linkUrl' => Url::to(['/content/history'])
                                     ]) ?>
                                 </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <?= SmallBox::widget([
+                                        'title' => Yii::t('app', 'DOCUMENTS_CATEGORIES'),
+                                        'text' => Yii::t('app', 'DOCUMENTS_CATEGORIES Edit'),
+                                        'icon' => 'fas fa-book',
+                                        'theme' => 'success',
+                                        'linkText' => Yii::t('app', 'GO_LINK'),
+                                        'linkUrl' => Url::to(['/content/documents-category'])
+                                    ]) ?>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <?= SmallBox::widget([
+                                        'title' => Yii::t('app', 'DOCUMENTS'),
+                                        'text' => Yii::t('app', 'DOCUMENTS Edit'),
+                                        'icon' => 'fas fa-book',
+                                        'theme' => 'success',
+                                        'linkText' => Yii::t('app', 'GO_LINK'),
+                                        'linkUrl' => Url::to(['/content/documents'])
+                                    ]) ?>
+                                </div>
                             </div>
                         </div>
                     </div>

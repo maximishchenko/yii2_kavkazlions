@@ -38,9 +38,12 @@ trait FileTrait
                 $filePath = $this->getPath($uploadPath, $this->$fileField);
                 $this->removeSingleFileIfExist($filePath);
             }
-            $this->$fileAttribute->saveAs($file);
-
-            $this->convertToWebp($file);
+            if ($this->$fileAttribute->saveAs($file)) {
+                $mimeType = mime_content_type($file);
+                if ($mimeType !== false && str_starts_with($mimeType, 'image/')) {
+                    $this->convertToWebp($file);
+                }
+            }
 
             $this->$fileField = basename($file);
         }
