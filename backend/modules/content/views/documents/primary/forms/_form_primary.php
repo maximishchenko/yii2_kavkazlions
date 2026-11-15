@@ -1,4 +1,6 @@
 <?php
+
+use backend\modules\content\models\DocumentsCategory;
 use vova07\imperavi\Widget;
 use yii\helpers\Url;
 
@@ -8,7 +10,10 @@ use yii\helpers\Url;
 <div class="col-md-6">
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
     
-    <?= $form->field($model, 'category_id')->dropDownList($model->getCategoriesItems(), ['prompt' => '-']) ?>
+    <?php
+    $parents = DocumentsCategory::getTree(0, true);
+    echo $form->field($model, 'category_id')->dropDownList($parents);
+    ?>
 
     <?= $form->field($model, 'sort')->textInput(['maxlength' => true, 'type' => 'number']) ?>
     <?= $form->field($model, 'status')->checkbox() ?>
