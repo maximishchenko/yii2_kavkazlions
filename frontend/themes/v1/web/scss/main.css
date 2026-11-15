@@ -1263,6 +1263,16 @@ table.data th {
 .table-wrap {
   overflow-x: auto;
 }
+.prose table {
+  border-collapse: collapse;
+  border: 1px solid #fff;
+}
+.prose th, .prose td {
+  border: 1px solid #fff;
+}
+.prose table.table-borderless, .prose table.table-borderless th, .prose table.table-borderless td {
+  border: 0;
+}
 /* sponsors */
 .partner-services-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));

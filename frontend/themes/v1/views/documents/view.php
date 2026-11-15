@@ -12,7 +12,9 @@ use yii\helpers\HtmlPurifier;
 $this->title = $document->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Documents Title'), 'url' => ['/documents/index']];
 if ($category !== null) {
-    $this->params['breadcrumbs'][] = ['label' => $category->name, 'url' => ['/documents/category', 'slug' => $category->slug]];
+    foreach ($category->breadcrumbLinks as $link) {
+        $this->params['breadcrumbs'][] = $link;
+    }
 }
 $this->params['breadcrumbs'][] = $this->title;
 ?>

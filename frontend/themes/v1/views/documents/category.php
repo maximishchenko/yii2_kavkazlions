@@ -11,6 +11,9 @@ use yii\widgets\ListView;
 
 $this->title = $category->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Documents Title'), 'url' => ['/documents/index']];
+foreach (array_slice($category->breadcrumbLinks, 0, -1) as $link) {
+    $this->params['breadcrumbs'][] = $link;
+}
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h1 class="page-title"><?= Html::encode($this->title) ?></h1>
