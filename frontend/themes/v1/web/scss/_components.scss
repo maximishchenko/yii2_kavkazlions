@@ -224,6 +224,8 @@ table.data { width: 100%; border-collapse: collapse; background: var(--surface);
 table.data th, table.data td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
 table.data th { background: var(--brand); color: #fff; }
 .table-wrap { overflow-x: auto; }
+.prose table { border-collapse: collapse; border: 1px solid #fff; }
+.prose th, .prose td { border: 1px solid #fff; }
 
 /* sponsors */
 .partner-services-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
