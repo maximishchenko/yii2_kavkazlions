@@ -115,5 +115,5 @@ return [
     'Document Attach Hint' => 'Файл вложения, который будет доступен для загрузки на сайте',
     'Document Description Hint' => 'Текст описания вложения',
     'Attach block' => 'Вложения',
-    
+    'Attach deleted' => 'Вложение удалено',
 ];

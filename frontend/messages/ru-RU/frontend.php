@@ -32,4 +32,7 @@ return [
     'Partners Services' => 'Партнерские услуги',
     'Sponsors Partners Services' => 'Партнерские услуги',
     'Sponsors Partner Service Title {service}' => 'Услуга: {service}',
+    'Documents Title' => 'Документация',
+    'Documents' => 'Документация',
+    'Attachments' => 'Вложения',
 ];

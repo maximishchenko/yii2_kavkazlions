@@ -64,46 +64,14 @@ use yii\helpers\Url;
                         </li>
                     </ul>
                 </li>
-                <!-- <li class="has-sub">
-                    <a href="/dokumentatsiya/">
-                        Документация
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="/dokumentatsiya/uchreditelnye/">
-                                Учредительные документы
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/dokumentatsiya/otdeleniya/">
-                                Отделения по видам спорта
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/dokumentatsiya/trenery/">
-                                Для тренеров
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/dokumentatsiya/sportsmeny/">
-                                Для спортсменов
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/dokumentatsiya/kalendar/">
-                                Календарный план мероприятий
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/dokumentatsiya/polozheniya/">
-                                Положения по мероприятиям
-                            </a>
-                        </li>
-                    </ul>
-                </li> -->
                 <li>
                     <a href="<?= Url::toRoute('/management') ?>">
                         <?= Yii::t('app', 'Management Title') ?>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= Url::toRoute('/documents') ?>">
+                        <?= Yii::t('app', 'Documents') ?>
                     </a>
                 </li>
                 <li>
@@ -111,18 +79,6 @@ use yii\helpers\Url;
                         <?= Yii::t('app', 'Contacts') ?>
                     </a>
                 </li>
-                <!-- <li class="has-sub">
-                    <a href="/tovary-i-uslugi/">
-                        Товары и услуги
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="/tovary-i-uslugi/partnerskie-uslugi/">
-                                Партнёрские услуги
-                            </a>
-                        </li>
-                    </ul>
-                </li> -->
             </ul>
             <address class="header-contacts">
                 <?php foreach (array_unique(ArrayHelper::getColumn($contacts, 'address')) as $address): ?>

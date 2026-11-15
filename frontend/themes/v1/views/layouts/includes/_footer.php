@@ -31,16 +31,6 @@ use yii\helpers\Url;
                             <?= Yii::t('app', 'History') ?>
                         </a>
                     </li>
-                    <!-- <li>
-                        <a href="/khronika/">
-                            Хроника событий
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/dokumentatsiya/">
-                            Документация
-                        </a>
-                    </li> -->
                     <li>
                         <a href="<?= Url::toRoute('/sponsors') ?>">
                             <?= Yii::t('app', 'Sponsors') ?>
@@ -49,6 +39,11 @@ use yii\helpers\Url;
                     <li>
                         <a href="<?= Url::toRoute('/management') ?>">
                             <?= Yii::t('app', 'Management Title') ?>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= Url::toRoute('/documents') ?>">
+                            <?= Yii::t('app', 'Documents') ?>
                         </a>
                     </li>
                     <li>

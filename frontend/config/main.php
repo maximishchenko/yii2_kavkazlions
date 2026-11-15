@@ -97,6 +97,8 @@ return [
                 '' => 'site/index',
                 'management/<companySlug:[\w-]+>/<slug:[\w-]+>' => 'management/leader',
                 'management/<slug:[\w-]+>' => 'management/view',
+                'documents/category/<slug:[\w-]+>' => 'documents/category',
+                'documents/document/<slug:[\w-]+>' => 'documents/view',
                 'sponsors' => 'sponsors/index',
                 'sponsors/partners-services' => 'sponsors/partners-services',
                 'sponsors/partners-services/<slug:[\w-]+>' => 'sponsors/partners-services-view',
