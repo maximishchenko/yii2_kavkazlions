@@ -23,7 +23,21 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="layout">
 <div class="content">
 <?php if ($document->description): ?>
-    <div class="prose"><?= HtmlPurifier::process(Html::decode($document->description)) ?></div>
+    <div class="prose"><?= HtmlPurifier::process(Html::decode($document->description), static function ($config) {
+        $definition = $config->getHTMLDefinition(true);
+        $definition->addElement('video', 'Inline', 'Flow', 'Common', [
+            'src' => 'URI',
+            'controls' => 'Bool',
+            'width' => 'Length',
+            'height' => 'Length',
+            'preload' => 'Enum#none,metadata,auto',
+            'poster' => 'URI',
+        ]);
+        $definition->addElement('source', 'Inline', 'Empty', 'Common', [
+            'src' => 'URI',
+            'type' => 'Text',
+        ]);
+    }) ?></div>
 <?php endif; ?>
 <?php if ($document->attachments): ?>
     <h2 class="section-title"><?= Html::encode(Yii::t('app', 'Attachments')) ?></h2>

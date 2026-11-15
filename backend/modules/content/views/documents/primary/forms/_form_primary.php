@@ -28,6 +28,7 @@ use yii\helpers\Url;
                 'fileUpload' => Url::to(['/content/documents/file-upload']),
                 'plugins' => [
                     'table',
+                    'video',
                     'fullscreen',
                     'formatting',
                     'imagemanager',
